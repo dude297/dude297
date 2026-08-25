@@ -1,17 +1,35 @@
-Hey, I'm Yingche 👋
+<table>
+<tr>
+<td width="42%" valign="top">
 
-EE/CS student building:
+<p>GitHub Stats</p>
+
+<img src="./profile/stats.svg" width="100%" alt="dude297's GitHub stats" />
+
+</td>
+
+<td width="58%" valign="top">
+
+<p>Hey, I'm Yingche 👋</p>
+
+<p>
+EE/CS student building:<br>
 AI • Software • Hardware • Embedded Systems
+</p>
 
-Currently building:
-HomeHub - local AI, systems infrastructure, and intelligent tooling
-ScholarSafe - a student housing and roommate platform
+<p>
+Currently building:<br>
+HomeHub - local AI, systems infrastructure, and intelligent tooling<br>
+ScholarSafe - a student housing and roommate platform<br>
 Hardware / FPGA - embedded systems, Verilog, and electronics experiments
+</p>
 
+<p>
 Most of my larger projects are currently developed in private repositories while they're under active development.
+</p>
 
-GitHub Stats
+</td>
+</tr>
+</table>
 
-<p align="left"> <img src="https://kgnio-profile-card.vercel.app/api/card?user=dude297" alt="dude297's GitHub stats" /> </p>
-
-More project write-ups and demos coming soon.
+<p>More project write-ups and demos coming soon.</p>
