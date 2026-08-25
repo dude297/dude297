@@ -12,6 +12,6 @@ Most of my larger projects are currently developed in private repositories while
 
 GitHub Stats
 
-<p align="left"> <img src="https://github-readme-stats.vercel.app/api?username=dude297&show_icons=true&theme=transparent&hide_border=true&include_all_commits=true&count_private=true" alt="dude297's GitHub stats" /> </p>
+<p align="left"> <img src="https://kgnio-profile-card.vercel.app/api/card?user=dude297" alt="dude297's GitHub stats" /> </p>
 
 More project write-ups and demos coming soon.
