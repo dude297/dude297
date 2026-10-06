@@ -34,7 +34,7 @@ Agents choose the desired outcome; Converge persists it, observes authoritative 
 
 <a href="https://dude297.github.io/dude297/projects/converge.html"><b>Case study →</b></a>
 &nbsp;·&nbsp;
-<a href="https://scholarsafe.vercel.app/demo"><b>Live demo ↗</b></a>
+<a href="https://scholarsafe.vercel.app"><b>Live demo ↗</b></a>
 
 </td>
 <td width="50%" valign="top">
