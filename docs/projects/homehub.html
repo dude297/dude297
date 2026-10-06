@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>HomeHub — Yingche Wee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/><link rel="stylesheet" href="../case-study.css"/></head>
+<body class="case-body">
+<header class="case-header"><a href="../index.html">← PORTFOLIO</a><a href="../resume.html">RÉSUMÉ</a></header>
+<main class="case-main">
+<section class="case-hero">
+<div class="case-index">CASE STUDY / 02</div>
+<h1>HomeHub</h1><p class="case-deck">A local-first distributed systems project built around durable state, bounded execution, explicit release authority, and small edge devices.</p>
+<div class="case-meta">
+<div><small>TYPE</small><strong>Systems infrastructure</strong></div>
+<div><small>STATUS</small><strong>Private / active</strong></div>
+<div><small>STACK</small><strong>Python / Linux / SQLite / Pi</strong></div>
+<div><small>FOCUS</small><strong>Distributed systems</strong></div>
+</div>
+</section>
+<section class="case-section"><h2>01 / PROBLEM</h2><div class="case-copy"><h3>Home automation gets fragile when control, state, and recovery are implicit.</h3><p>HomeHub treats the house like a small distributed system rather than a pile of scripts. The core owns durable state and execution policy; edge devices expose bounded capabilities; release state is explicit; and automation is designed to fail closed rather than widen authority for convenience.</p>
+<div class="case-grid"><div class="case-block"><small>CORE</small><h4>Durable local state</h4><p>SQLite-backed state and explicit protocol contracts preserve system truth locally.</p></div><div class="case-block"><small>WORKERS</small><h4>Bounded execution</h4><p>Worker sessions, leases, cancellation, and recovery are constrained by server-owned policy.</p></div><div class="case-block"><small>EDGE</small><h4>Small-node services</h4><p>Raspberry Pi nodes handle DNS, networking, storage, messaging, and edge workflows.</p></div><div class="case-block"><small>RELEASES</small><h4>Immutable promotion</h4><p>Candidate identity, validation, staging, promotion, and rollback are treated as separate authority steps.</p></div></div></div></section>
+<section class="case-section"><h2>02 / ARCHITECTURE</h2><div class="case-copy"><h3>The system boundary is explicit.</h3><div class="arch"><div class="arch-row"><div class="arch-node"><b>HomeHub Core</b><span>state<br/>policy<br/>release control</span></div><div class="arch-arrow">↔</div><div class="arch-node"><b>Contracts</b><span>protocol v1<br/>bounded messages</span></div><div class="arch-arrow">↔</div><div class="arch-node"><b>Edge nodes</b><span>Pi-hole<br/>Unbound<br/>Tailscale<br/>Matrix</span></div></div></div>
+ <p>The design keeps release authority, execution authority, and edge capability separate. A green build or successful branch is not itself permission to rotate production.</p></div></section>
+<section class="case-section"><h2>03 / DECISIONS</h2><div class="case-copy"><h3>Engineering choices that matter.</h3><div class="flow"><div class="flow-step"><div><b>Local state stays authoritative</b><span>The system does not require a cloud control plane to know what happened locally.</span></div></div><div class="flow-step"><div><b>Lease expiry does not grant replay authority</b><span>Timeout is evidence of uncertainty, not permission to duplicate work.</span></div></div><div class="flow-step"><div><b>No arbitrary remote shell surface</b><span>Capabilities are modeled as bounded operations rather than general command execution.</span></div></div><div class="flow-step"><div><b>Release evidence is immutable</b><span>Exact candidate identity and validation evidence are preserved before promotion.</span></div></div></div></div></section>
+<section class="case-section"><h2>04 / LINKS</h2><div class="case-copy"><h3>Inspect the work.</h3><div class="case-links"><a class="case-link primary" href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub profile ↗</a></div></div></section>
+</main></body></html>
