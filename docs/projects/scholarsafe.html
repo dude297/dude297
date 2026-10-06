@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ScholarSafe — Yingche Wee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/><link rel="stylesheet" href="../case-study.css"/></head>
+<body class="case-body">
+<header class="case-header"><a href="../index.html">← PORTFOLIO</a><a href="../resume.html">RÉSUMÉ</a></header>
+<main class="case-main">
+<section class="case-hero">
+<div class="case-index">CASE STUDY / 03</div>
+<h1>ScholarSafe</h1><p class="case-deck">A student housing platform built as a real product surface: identity, trust, matching, messaging, moderation, and production security boundaries.</p>
+<div class="case-meta">
+<div><small>TYPE</small><strong>Full-stack product</strong></div>
+<div><small>STATUS</small><strong>Private / active</strong></div>
+<div><small>STACK</small><strong>Next.js / Supabase / Postgres</strong></div>
+<div><small>FOCUS</small><strong>Product + security</strong></div>
+</div>
+</section>
+<section class="case-section"><h2>01 / PROBLEM</h2><div class="case-copy"><h3>Housing marketplaces need more than listings.</h3><p>For students, trust is part of the product. ScholarSafe combines listing discovery with verified roles, roommate compatibility, saved searches, messaging, moderation, and database-level security so the core workflows do not depend on client-side trust.</p>
+<div class="case-grid"><div class="case-block"><small>IDENTITY</small><h4>Verified roles</h4><p>Landlord and student capabilities are modeled separately with pending/verified states.</p></div><div class="case-block"><small>MATCHING</small><h4>Explainable roommate fit</h4><p>Weighted compatibility scoring exposes reasons and blocks hard incompatibilities.</p></div><div class="case-block"><small>SECURITY</small><h4>RLS-first access</h4><p>Supabase row-level policies constrain reads/writes close to the data boundary.</p></div><div class="case-block"><small>OPERATIONS</small><h4>Production discipline</h4><p>CI, rate limits, audit logging, moderation confirmations, and deployment checks are part of the product.</p></div></div></div></section>
+<section class="case-section"><h2>02 / ARCHITECTURE</h2><div class="case-copy"><h3>The system boundary is explicit.</h3><div class="arch"><div class="arch-row"><div class="arch-node"><b>Next.js app</b><span>search<br/>matching<br/>messaging</span></div><div class="arch-arrow">→</div><div class="arch-node"><b>Supabase</b><span>Auth<br/>Postgres<br/>Realtime<br/>RLS</span></div><div class="arch-arrow">→</div><div class="arch-node"><b>External services</b><span>Resend<br/>Turnstile<br/>Vercel</span></div></div></div>
+ <p>The application layer can request operations, but database policies enforce ownership and role boundaries independently of UI state.</p></div></section>
+<section class="case-section"><h2>03 / DECISIONS</h2><div class="case-copy"><h3>Engineering choices that matter.</h3><div class="flow"><div class="flow-step"><div><b>Push authorization toward the database</b><span>Sensitive reads and writes are not protected only by route code or hidden UI controls.</span></div></div><div class="flow-step"><div><b>Make matching explainable</b><span>Users can see why a roommate match scored well rather than receiving an opaque number.</span></div></div><div class="flow-step"><div><b>Treat moderation as stateful workflow</b><span>Actions that affect other users require explicit confirmation and auditable transitions.</span></div></div><div class="flow-step"><div><b>Build the boring production pieces</b><span>Rate limiting, email confirmation, audit logs, regression tests, and deployment checks matter as much as the landing page.</span></div></div></div></div></section>
+<section class="case-section"><h2>04 / LINKS</h2><div class="case-copy"><h3>Inspect the work.</h3><div class="case-links"><a class="case-link primary" href="https://scholarsafe-io2.vercel.app" target="_blank" rel="noreferrer">Live project ↗</a><a class="case-link " href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub profile ↗</a></div></div></section>
+</main></body></html>
