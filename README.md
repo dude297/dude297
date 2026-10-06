@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://dude297.github.io/dude297/"><img src="https://img.shields.io/badge/PORTFOLIO-%26%20R%C3%89SUM%C3%89-22D3EE?style=for-the-badge&logo=githubpages&logoColor=071019" alt="Portfolio and resume" /></a>
   <a href="https://github.com/dude297?tab=repositories"><img src="https://img.shields.io/badge/BUILDING-AI%20%C2%B7%20SYSTEMS%20%C2%B7%20HARDWARE-7C3AED?style=for-the-badge&logo=github&logoColor=white" alt="Building AI, systems, and hardware" /></a>
   <a href="https://pypi.org/project/plasma-dynamic-wallpaper/"><img src="https://img.shields.io/pypi/v/plasma-dynamic-wallpaper?style=for-the-badge&logo=pypi&logoColor=white&label=PyPI" alt="Plasma Dynamic Wallpaper on PyPI" /></a>
   <a href="https://internship-finder-pi.vercel.app"><img src="https://img.shields.io/badge/LIVE-Internship%20Finder-22C55E?style=for-the-badge&logo=vercel&logoColor=white" alt="Internship Finder live" /></a>
