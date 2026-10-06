@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="After the Shield — causal research on how runtime safety interventions change future nominal behavior of vision-language-action policies."/>
+  <title>After the Shield — Yingche Wee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <link rel="stylesheet" href="../case-study.css"/>
+</head>
+<body class="case-body">
+<header class="case-header">
+  <a href="../index.html">← PORTFOLIO</a>
+  <a href="../resume.html">RÉSUMÉ</a>
+</header>
+
+<main class="case-main">
+  <section class="case-hero">
+    <div class="case-index">CASE STUDY / 04</div>
+    <h1>After the Shield</h1>
+    <p class="case-deck">
+      A causal study of what happens <em>after</em> a runtime safety layer changes a vision-language-action policy's action.
+    </p>
+    <div class="case-meta">
+      <div><small>TYPE</small><strong>VLA safety research</strong></div>
+      <div><small>STATUS</small><strong>Sprint 0 / bring-up</strong></div>
+      <div><small>BASE</small><strong>π₀.₅-LIBERO</strong></div>
+      <div><small>BENCHMARK</small><strong>SafeLIBERO</strong></div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>01 / QUESTION</h2>
+    <div class="case-copy">
+      <h3>Does a safety intervention change what the policy wants to do next?</h3>
+      <p>
+        Runtime shields can prevent an immediate unsafe action, but that correction also changes the physical state the robot reaches.
+        A learned VLA then observes a different world than it would have seen without the intervention. The project asks whether that
+        changed state causally alters the policy's next <em>nominal</em> action proposal.
+      </p>
+
+      <div class="case-grid">
+        <div class="case-block">
+          <small>PRIMARY QUESTION</small>
+          <h4>Downstream policy effect</h4>
+          <p>Measure whether one safety correction changes the VLA's next nominal proposal.</p>
+        </div>
+        <div class="case-block">
+          <small>CONTROL</small>
+          <h4>Same state, paired branches</h4>
+          <p>Both branches start from the exact same pre-intervention simulator state and synchronized policy randomness.</p>
+        </div>
+        <div class="case-block">
+          <small>SEPARATION</small>
+          <h4>Fresh-policy vs stale chunk</h4>
+          <p>Distinguish a changed-state causal effect from deployment issues caused by cached action chunks.</p>
+        </div>
+        <div class="case-block">
+          <small>COMPARISON</small>
+          <h4>Defense architecture</h4>
+          <p>Compare reactive AEGIS with an anticipatory/hybrid Critic-VLA arm after the causal pilot works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>02 / CAUSAL DESIGN</h2>
+    <div class="case-copy">
+      <h3>One intervention state. Two counterfactual futures.</h3>
+      <p>
+        At a genuine safety-intervention timestep <code>s_t</code>, the simulator state is snapshotted and policy randomness is synchronized.
+        The experiment then branches from that identical point.
+      </p>
+
+      <div class="branch-pair">
+        <div class="branch-card">
+          <small>BRANCH N / NO INTERVENTION</small>
+          <h4>Execute the nominal action.</h4>
+          <ol>
+            <li>Restore identical <code>s_t</code>.</li>
+            <li>Restore/synchronize policy RNG.</li>
+            <li>Execute <code>a_nom(t)</code>.</li>
+            <li>Observe <code>s_N(t+1)</code>.</li>
+            <li>Force a fresh policy query.</li>
+          </ol>
+          <div class="branch-output">record a_nom^N(t+1)</div>
+        </div>
+
+        <div class="branch-divider">
+          <span>SAME START</span>
+          <b>↙ ↘</b>
+        </div>
+
+        <div class="branch-card branch-safe">
+          <small>BRANCH S / SINGLE INTERVENTION</small>
+          <h4>Execute one shield-corrected action.</h4>
+          <ol>
+            <li>Restore identical <code>s_t</code>.</li>
+            <li>Restore/synchronize policy RNG.</li>
+            <li>Execute <code>a_safe(t)</code> once.</li>
+            <li>Observe <code>s_S(t+1)</code>.</li>
+            <li>Force a fresh policy query with correction disabled for measurement.</li>
+          </ol>
+          <div class="branch-output">record a_nom^S(t+1)</div>
+        </div>
+      </div>
+
+      <div class="research-equation">
+        <small>PRIMARY ENDPOINT</small>
+        <strong>D1 = L2(a_nom^S(t+1) − a_nom^N(t+1))</strong>
+        <span>A paired next-proposal divergence, not an unpaired episode average.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>03 / SCIENTIFIC CONTROLS</h2>
+    <div class="case-copy">
+      <h3>The experiment semantics are frozen before results.</h3>
+      <p>
+        The research repo treats experiment definitions as controlled artifacts. Primary semantics, exclusions, metrics, pairing rules,
+        and go/no-go conditions are documented before scaled experiments.
+      </p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div>
+            <b>Freeze the primary endpoint</b>
+            <span>The next-policy divergence metric is defined before the causal pilot and cannot be silently changed after observing outcomes.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Log every intervention-relevant state</b>
+            <span>Per-timestep schema includes nominal action, executed action, intervention magnitude, simulator-state reference, seed, collision, safety violation, and task outcome.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Predefine valid exclusions</b>
+            <span>Infrastructure failures may invalidate a pair; collisions, safety failures, timeouts, and task failures remain scientific outcomes.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Keep null results valid</b>
+            <span>A near-zero causal effect is scientifically acceptable. A broken pairing mechanism is not.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>04 / SYSTEM PANEL</h2>
+    <div class="case-copy">
+      <h3>Compare intervention architectures without claiming them as novelty.</h3>
+      <div class="research-panel">
+        <div>
+          <small>CONTROL</small>
+          <b>π₀.₅ + SafeLIBERO</b>
+          <span>No defense. Establish nominal behavior and reproduction.</span>
+        </div>
+        <div>
+          <small>REACTIVE</small>
+          <b>AEGIS / VLSA</b>
+          <span>Post-hoc CBF/QP action projection. Primary intervention mechanism.</span>
+        </div>
+        <div>
+          <small>ANTICIPATORY / HYBRID</small>
+          <b>Critic-VLA</b>
+          <span>Public comparison arm after the AEGIS causal pilot passes.</span>
+        </div>
+      </div>
+      <p>
+        The novelty claim is not “VLA safety exists” or “CBF projection works.” The candidate contribution is paired counterfactual measurement
+        of how safety interventions change later nominal VLA proposals, plus architecture-level comparison under matched conditions.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>05 / CURRENT FRONTIER</h2>
+    <div class="case-copy">
+      <h3>No scientific result is claimed yet.</h3>
+      <div class="research-status">
+        <div>
+          <span class="status-mark status-done">✓</span>
+          <div><b>SafeLIBERO simulator</b><small>validated</small></div>
+        </div>
+        <div>
+          <span class="status-mark status-done">✓</span>
+          <div><b>Policy environment + checkpoint</b><small>validated</small></div>
+        </div>
+        <div>
+          <span class="status-mark status-next">→</span>
+          <div><b>π₀.₅ model restore + live query</b><small>current frontier</small></div>
+        </div>
+        <div>
+          <span class="status-mark">○</span>
+          <div><b>Paired Branch N / Branch S pilot</b><small>not completed</small></div>
+        </div>
+      </div>
+      <p>
+        The current execution phase is infrastructure bring-up on Kaggle T4 x2. The simulator path, environment, checkpoint download,
+        fixed-state restore, and rendering path are validated. The next gate is a live π₀.₅ policy query, followed by reproducible paired-noise
+        instrumentation and only then the causal intervention pilot.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>06 / WHY IT MATTERS</h2>
+    <div class="case-copy">
+      <h3>Safety layers can create a second-order control problem.</h3>
+      <p>
+        A safety correction may solve the immediate risk while changing the trajectory the learned controller subsequently sees.
+        If that altered state systematically changes later nominal proposals—or increases future intervention burden—then evaluating a shield
+        only on immediate collision avoidance misses part of the closed-loop behavior.
+      </p>
+      <p>
+        The project is designed to separate that causal question from ordinary benchmark performance, generic failure recovery, and stale-action-chunk deployment effects.
+      </p>
+    </div>
+  </section>
+</main>
+</body>
+</html>
