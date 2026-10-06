@@ -77,3 +77,45 @@ body.case-body{background:#0d1117}
   .evidence-strip div{border-right:0;border-bottom:1px solid #30363d}
   .evidence-strip div:last-child{border-bottom:0}
 }
+
+
+/* After the Shield research visuals */
+.case-copy code{font-family:"JetBrains Mono",monospace;font-size:.9em;color:#b8c7d9}
+.branch-pair{display:grid;grid-template-columns:1fr 92px 1fr;gap:12px;align-items:stretch;margin-top:28px}
+.branch-card{border:1px solid #30363d;background:#10161f;padding:20px}
+.branch-card small{display:block;font:600 10px "JetBrains Mono",monospace;color:#58a6ff;letter-spacing:.08em}
+.branch-card h4{margin:10px 0 14px;font-size:18px}
+.branch-card ol{margin:0;padding-left:20px;color:#8b949e;font-size:13.5px;line-height:1.65}
+.branch-card li{margin:5px 0}
+.branch-safe{border-color:#3d444d;background:#0f1714}
+.branch-safe small{color:#78dba9}
+.branch-divider{display:grid;place-items:center;align-content:center;gap:8px;color:#6e7681;text-align:center}
+.branch-divider span{font:600 9px "JetBrains Mono",monospace;letter-spacing:.08em}
+.branch-divider b{font-size:20px;color:#58a6ff}
+.branch-output{margin-top:16px;padding-top:12px;border-top:1px solid #30363d;font:600 11px "JetBrains Mono",monospace;color:#d8dee4}
+.research-equation{margin-top:18px;border-left:2px solid #58a6ff;background:#10161f;padding:17px 18px}
+.research-equation small{display:block;font:600 9px "JetBrains Mono",monospace;letter-spacing:.09em;color:#58a6ff}
+.research-equation strong{display:block;margin:8px 0 6px;font:600 15px "JetBrains Mono",monospace;color:#f0f3f6}
+.research-equation span{color:#8b949e;font-size:13.5px}
+.research-panel{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #30363d;margin:26px 0 20px}
+.research-panel>div{padding:18px;border-right:1px solid #30363d}
+.research-panel>div:last-child{border-right:0}
+.research-panel small{display:block;font:600 9px "JetBrains Mono",monospace;letter-spacing:.08em;color:#6e7681}
+.research-panel b{display:block;margin:9px 0 6px;font-size:15px}
+.research-panel span{display:block;color:#8b949e;font-size:13px;line-height:1.55}
+.research-status{display:grid;border:1px solid #30363d;margin:26px 0 20px}
+.research-status>div{display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:center;padding:14px 16px;border-bottom:1px solid #30363d}
+.research-status>div:last-child{border-bottom:0}
+.status-mark{font:600 15px "JetBrains Mono",monospace;color:#6e7681}
+.status-done{color:#78dba9}
+.status-next{color:#58a6ff}
+.research-status b{display:block;font-size:14px}
+.research-status small{display:block;margin-top:2px;font:500 10px "JetBrains Mono",monospace;color:#6e7681;letter-spacing:.05em}
+@media(max-width:760px){
+  .branch-pair{grid-template-columns:1fr}
+  .branch-divider{min-height:48px}
+  .branch-divider b{transform:rotate(90deg)}
+  .research-panel{grid-template-columns:1fr}
+  .research-panel>div{border-right:0;border-bottom:1px solid #30363d}
+  .research-panel>div:last-child{border-bottom:0}
+}
