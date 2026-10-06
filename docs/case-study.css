@@ -19,3 +19,21 @@ body.case-body{background:#0d1117}
 .case-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.case-link{border:1px solid #30363d;border-radius:5px;padding:10px 14px;font-weight:700;font-size:13px}.case-link.primary{background:#f0f3f6;color:#0d1117;border-color:#f0f3f6}
 @media(max-width:760px){.case-meta{grid-template-columns:1fr 1fr}.case-section{grid-template-columns:1fr;gap:20px}.case-grid{grid-template-columns:1fr}.arch-row{display:grid}.arch-arrow{transform:rotate(90deg)}}
 @media print{.case-header{display:none}.case-main{width:auto}.case-hero{padding-top:20px}}
+
+/* Readability pass */
+.case-header a{font-size:13px}
+.case-index{font-size:12px}
+.case-deck{font-size:20px;line-height:1.65}
+.case-meta small{font-size:10.5px}
+.case-meta strong{font-size:14px}
+.case-section h2{font-size:14px}
+.case-copy p{font-size:16px;line-height:1.72}
+.case-block small{font-size:10.5px}
+.case-block h4{font-size:17px}
+.case-block p{font-size:14.5px;line-height:1.6}
+.arch-node b{font-size:13.5px}
+.arch-node span{font-size:12px;line-height:1.55}
+.flow-step:before{font-size:12px}
+.flow-step b{font-size:15px}
+.flow-step span{font-size:14.5px;line-height:1.6}
+.case-link{font-size:14px}
