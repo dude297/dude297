@@ -119,3 +119,23 @@ body.case-body{background:#0d1117}
   .research-panel>div{border-right:0;border-bottom:1px solid #30363d}
   .research-panel>div:last-child{border-bottom:0}
 }
+
+
+/* ColleAgent privacy architecture */
+.privacy-arch{display:grid;grid-template-columns:1fr 150px 1fr;gap:12px;align-items:stretch;margin:28px 0}
+.privacy-zone{border:1px solid #30363d;background:#10161f;padding:20px}
+.privacy-private{border-color:#58a6ff;background:#101923}
+.privacy-zone small{display:block;font:600 10px "JetBrains Mono",monospace;letter-spacing:.08em;color:#6e7681}
+.privacy-private small{color:#58a6ff}
+.privacy-zone h4{margin:10px 0 12px;font-size:18px}
+.privacy-zone ul{margin:0;padding-left:18px;color:#8b949e;font-size:13.5px;line-height:1.65}
+.privacy-zone li{margin:4px 0}
+.privacy-gate{display:grid;place-items:center;align-content:center;gap:8px;text-align:center;border-top:1px solid #30363d;border-bottom:1px solid #30363d}
+.privacy-gate span{font:600 9px "JetBrains Mono",monospace;letter-spacing:.08em;color:#58a6ff}
+.privacy-gate b{font-size:24px;color:#58a6ff}
+.privacy-gate small{font:500 9px "JetBrains Mono",monospace;color:#6e7681}
+@media(max-width:760px){
+  .privacy-arch{grid-template-columns:1fr}
+  .privacy-gate{min-height:54px;border:1px solid #30363d}
+  .privacy-gate b{transform:rotate(90deg)}
+}
