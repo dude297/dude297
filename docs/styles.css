@@ -98,3 +98,50 @@ img{max-width:100%;display:block}
   .layer{padding:22px 18px;grid-template-columns:44px 1fr;gap:14px}.method-grid{grid-template-columns:1fr}.resume-cta{padding:30px 24px}.footer{display:block}.footer-links{margin-top:14px;flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button:hover,.project-card:hover{transform:none}.blink{animation:none}.cursor-glow{display:none}}
+
+
+/* Readability pass */
+body{font-size:17px}
+.nav a{font-size:15px}
+.button{font-size:14px;min-height:44px}
+.eyebrow,.kicker{font-size:13px;letter-spacing:.10em}
+.hero-lede{font-size:20px;line-height:1.65}
+.signal-row{font-size:12px;line-height:1.6}
+.console-title{font-size:12px}
+.console-pill{font-size:11px}
+.console-body{font-size:14.5px;line-height:1.78}
+.console-body p{margin:8px 0}
+.proof div{min-width:0}
+.proof strong{font-size:28px}
+.proof span{display:block;font-size:13px;line-height:1.45;letter-spacing:.07em;overflow-wrap:anywhere}
+.section-heading>p{font-size:16.5px;line-height:1.7}
+.project-no{font-size:12px}
+.project-tags{gap:10px 14px}
+.project-tags span,.privacy-badge{font-size:11px;line-height:1.5}
+.project-card p{font-size:16px;line-height:1.72}
+.project-points{font-size:15px;line-height:1.65}
+.stack{font-size:12.5px;line-height:1.65}
+.project-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin-top:26px;position:relative;z-index:2;max-width:100%}
+.project-links a{display:inline-flex;align-items:center;min-height:32px;font-size:14px;line-height:1.35;white-space:nowrap}
+.layer-index{font-size:14px}
+.layer h3{font-size:21px}
+.layer p{font-size:15.5px;line-height:1.6}
+.layer-tech{font-size:12.5px;line-height:1.55;text-align:right}
+.method>span{font-size:12px}
+.method h3{font-size:20px}
+.method p{font-size:15.5px;line-height:1.65}
+.resume-cta p{font-size:16px;line-height:1.7}
+.footer{font-size:14px}
+@media(max-width:1050px){
+  .project-links{gap:8px 14px}
+  .layer{grid-template-columns:70px 1fr}
+  .layer-tech{grid-column:2;text-align:left;margin-top:4px}
+}
+@media(max-width:600px){
+  body{font-size:16px}
+  .hero-lede{font-size:18px}
+  .console-body{font-size:13.5px}
+  .proof span{font-size:12px}
+  .project-card p{font-size:15.5px}
+  .project-links a{font-size:13.5px}
+}
