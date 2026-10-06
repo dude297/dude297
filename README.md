@@ -136,10 +136,11 @@ Studying how runtime safety interventions causally change the <i>future nominal 
 ## 📊 GitHub signal
 
 <p align="center">
-  <img src="./profile/stats.svg" width="56%" alt="Yingche's GitHub stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=dude297&show_icons=true&hide_rank=true&include_all_commits=true&theme=transparent&hide_border=true&title_color=67E8F9&text_color=94A3B8&icon_color=A78BFA" width="54%" alt="Yingche's GitHub stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dude297&layout=compact&langs_count=8&theme=transparent&hide_border=true&title_color=67E8F9&text_color=94A3B8" width="41%" alt="Yingche's top languages" />
 </p>
 
-> A lot of my larger current work lives in private repositories while it is under active development. The profile stats workflow includes private activity without exposing private code.
+> A lot of my larger current work lives in private repositories while it is under active development. A daily profile workflow also generates private-inclusive local stats without exposing private code.
 
 <br/>
 
