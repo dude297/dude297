@@ -1,26 +1,235 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Converge — Yingche Wee</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../styles.css"/><link rel="stylesheet" href="../case-study.css"/></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Converge case study — durable outcome infrastructure for AI agents, deterministic reconciliation, Stripe and Supabase recovery."/>
+  <title>Converge — Yingche Wee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <link rel="stylesheet" href="../case-study.css"/>
+</head>
 <body class="case-body">
-<header class="case-header"><a href="../index.html">← PORTFOLIO</a><a href="../resume.html">RÉSUMÉ</a></header>
+<header class="case-header">
+  <a href="../index.html">← PORTFOLIO</a>
+  <div class="case-header-links">
+    <a href="https://scholarsafe.vercel.app" target="_blank" rel="noreferrer">PRODUCT ↗</a>
+    <a href="../resume.html">RÉSUMÉ</a>
+  </div>
+</header>
+
 <main class="case-main">
-<section class="case-hero">
-<div class="case-index">CASE STUDY / 01</div>
-<h1>Converge</h1><p class="case-deck">A durable outcome layer for AI agents operating across systems where partial success is more dangerous than a clean failure.</p>
-<div class="case-meta">
-<div><small>TYPE</small><strong>Agent infrastructure</strong></div>
-<div><small>STATUS</small><strong>Hackathon prototype</strong></div>
-<div><small>STACK</small><strong>Gemini / Supabase / Stripe</strong></div>
-<div><small>FOCUS</small><strong>Reliability + execution</strong></div>
-</div>
-</section>
-<section class="case-section"><h2>01 / PROBLEM</h2><div class="case-copy"><h3>Agents can reason correctly and still leave the world wrong.</h3><p>A support agent may decide to issue a refund and resolve a case, but those mutations happen in different systems. If execution dies after Stripe succeeds and before the database updates, blindly retrying the model can duplicate a side effect. Converge treats the desired business outcome—not the model's procedural trace—as the durable object.</p>
-<div class="case-grid"><div class="case-block"><small>FAILURE MODE</small><h4>Partial mutation</h4><p>External systems can diverge after a crash, timeout, or interrupted execution.</p></div><div class="case-block"><small>BOUNDARY</small><h4>Reasoning ≠ authority</h4><p>The model chooses a target outcome; deterministic code owns allowlisted mutations.</p></div><div class="case-block"><small>RECOVERY</small><h4>Observe before retry</h4><p>Authoritative state is re-read before deciding which action, if any, remains.</p></div><div class="case-block"><small>SAFETY</small><h4>Ownership preflight</h4><p>Mutation targets must belong to the authorized customer/resource set.</p></div></div></div></section>
-<section class="case-section"><h2>02 / ARCHITECTURE</h2><div class="case-copy"><h3>The system boundary is explicit.</h3><div class="arch"><div class="arch-row"><div class="arch-node"><b>Gemini agent</b><span>reads tools<br/>proposes Outcome</span></div><div class="arch-arrow">→</div><div class="arch-node"><b>Converge</b><span>persist<br/>validate<br/>evaluate drift</span></div><div class="arch-arrow">→</div><div class="arch-node"><b>Authoritative systems</b><span>Stripe<br/>Supabase</span></div></div></div>
- <p>Converge stores the declared outcome before mutation. Reconciliation compares that outcome against live Stripe and Supabase state, then executes only the minimal remaining safe repair.</p></div></section>
-<section class="case-section"><h2>03 / DECISIONS</h2><div class="case-copy"><h3>Engineering choices that matter.</h3><div class="flow"><div class="flow-step"><div><b>Persist intent before side effects</b><span>The desired outcome survives process failure and can be inspected by a later worker.</span></div></div><div class="flow-step"><div><b>Make reconciliation deterministic</b><span>LLM reasoning is not used to decide whether a requirement is currently satisfied.</span></div></div><div class="flow-step"><div><b>Design the demo around a real failure</b><span>Execution intentionally stops after a real Stripe test-mode refund so recovery is observable rather than hypothetical.</span></div></div><div class="flow-step"><div><b>Characterize the correctness boundary</b><span>Ownership validation prevents unauthorized mutation; it does not prove the agent selected the semantically correct same-customer charge.</span></div></div></div></div></section>
-<section class="case-section"><h2>04 / LINKS</h2><div class="case-copy"><h3>Inspect the work.</h3><div class="case-links"><a class="case-link primary" href="https://scholarsafe.vercel.app" target="_blank" rel="noreferrer">Live demo ↗</a><a class="case-link " href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub profile ↗</a></div></div></section>
-</main></body></html>
+  <section class="case-hero">
+    <div class="case-index">CASE STUDY / 01</div>
+    <h1>Converge</h1>
+    <p class="case-deck">
+      Durable outcome infrastructure for AI agents operating across systems where partial success is more dangerous than a clean failure.
+    </p>
+    <div class="case-meta">
+      <div><small>TYPE</small><strong>Agent infrastructure</strong></div>
+      <div><small>STATUS</small><strong>Working prototype</strong></div>
+      <div><small>STACK</small><strong>Gemini / Supabase / Stripe</strong></div>
+      <div><small>FOCUS</small><strong>Reliability + execution</strong></div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>01 / PROBLEM</h2>
+    <div class="case-copy">
+      <h3>Agents can reason correctly and still leave the world wrong.</h3>
+      <p>
+        A support agent may decide to issue a refund and resolve a case, but those mutations happen in different systems.
+        If execution dies after Stripe succeeds and before the database updates, blindly retrying the model can duplicate a side effect.
+        Converge treats the desired business outcome—not the model's procedural trace—as the durable object.
+      </p>
+
+      <div class="case-grid">
+        <div class="case-block">
+          <small>FAILURE MODE</small>
+          <h4>Partial mutation</h4>
+          <p>External systems can diverge after a crash, timeout, or interrupted execution.</p>
+        </div>
+        <div class="case-block">
+          <small>BOUNDARY</small>
+          <h4>Reasoning ≠ authority</h4>
+          <p>The model chooses a target outcome; deterministic code owns allowlisted mutations.</p>
+        </div>
+        <div class="case-block">
+          <small>RECOVERY</small>
+          <h4>Observe before retry</h4>
+          <p>Authoritative state is re-read before deciding which action, if any, remains.</p>
+        </div>
+        <div class="case-block">
+          <small>SAFETY</small>
+          <h4>Ownership preflight</h4>
+          <p>Mutation targets must belong to the authorized customer/resource set.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>02 / ARCHITECTURE</h2>
+    <div class="case-copy">
+      <h3>The system boundary is explicit.</h3>
+
+      <div class="arch">
+        <div class="arch-row">
+          <div class="arch-node">
+            <b>Gemini agent</b>
+            <span>read-only tools<br/>proposes target state</span>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-node-focus">
+            <b>Durable Outcome</b>
+            <span>persist requirements<br/>before side effects</span>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <b>Converge Runtime</b>
+            <span>validate ownership<br/>observe drift<br/>repair safely</span>
+          </div>
+        </div>
+        <div class="arch-systems">
+          <span>STRIPE / financial truth</span>
+          <span>SUPABASE / application truth</span>
+        </div>
+      </div>
+
+      <p>
+        Reconciliation compares the persisted Outcome against live Stripe and Supabase state.
+        The reconciler executes only the minimal safe mutation still required to make reality match the declared target.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>03 / FAILURE TRACE</h2>
+    <div class="case-copy">
+      <h3>The demo is built around a real partial failure.</h3>
+      <p>
+        The strongest proof is not a happy path. The live flow intentionally stops after a real Stripe test-mode refund succeeds,
+        leaving the support ticket unresolved so the system has to recover from authoritative state.
+      </p>
+
+      <div class="state-trace" aria-label="Converge failure and recovery sequence">
+        <div class="state-step">
+          <div class="state-step-top"><span>01</span><b>Outcome persisted</b></div>
+          <p>Refund $50 · keep both subscriptions active · resolve support case.</p>
+          <small>NO EXTERNAL MUTATION YET</small>
+        </div>
+        <div class="state-connector">→</div>
+        <div class="state-step state-failure">
+          <div class="state-step-top"><span>02</span><b>Process crashes</b></div>
+          <p>Stripe refund succeeds. Supabase ticket update never completes.</p>
+          <small>AUTHORITATIVE SYSTEMS DIVERGE</small>
+        </div>
+        <div class="state-connector">→</div>
+        <div class="state-step">
+          <div class="state-step-top"><span>03</span><b>Reality re-observed</b></div>
+          <p>Refund is already true. Ticket is still open. Subscriptions remain active.</p>
+          <small>NO BLIND REPLAY</small>
+        </div>
+        <div class="state-connector">→</div>
+        <div class="state-step state-success">
+          <div class="state-step-top"><span>04</span><b>Only drift repaired</b></div>
+          <p>Converge resolves the ticket and leaves the successful refund untouched.</p>
+          <small>OUTCOME SATISFIED</small>
+        </div>
+      </div>
+
+      <div class="evidence-strip">
+        <div>
+          <small>STRIPE</small>
+          <strong>$50 → refunded once</strong>
+        </div>
+        <div>
+          <small>SUPABASE</small>
+          <strong>open → resolved</strong>
+        </div>
+        <div>
+          <small>AGENT #2</small>
+          <strong>0 mutations required</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>04 / DECISIONS</h2>
+    <div class="case-copy">
+      <h3>Engineering choices that matter.</h3>
+      <div class="flow">
+        <div class="flow-step">
+          <div>
+            <b>Persist intent before side effects</b>
+            <span>The desired outcome survives process failure and can be inspected by a later worker.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Make reconciliation deterministic</b>
+            <span>LLM reasoning is not used to decide whether a requirement is currently satisfied.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Separate semantic correctness from authorization</b>
+            <span>Ownership checks prevent mutation outside the authorized customer set. They do not prove the agent chose the correct same-customer business target.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Prove coordination across workers</b>
+            <span>A second worker finds the satisfied durable Outcome and performs zero new external mutations.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>05 / PRODUCT SURFACES</h2>
+    <div class="case-copy">
+      <h3>The prototype now exposes the system as a coherent product.</h3>
+      <div class="surface-grid">
+        <a href="https://scholarsafe.vercel.app" target="_blank" rel="noreferrer">
+          <small>/</small>
+          <b>Overview</b>
+          <span>Product model, failure story, correctness boundary.</span>
+        </a>
+        <a href="https://scholarsafe.vercel.app/demo" target="_blank" rel="noreferrer">
+          <small>/demo</small>
+          <b>Runtime</b>
+          <span>Live outcome → crash → reconciliation sequence.</span>
+        </a>
+        <a href="https://scholarsafe.vercel.app/watch" target="_blank" rel="noreferrer">
+          <small>/watch</small>
+          <b>Watch</b>
+          <span>Deterministic tool-contract drift and migration preview.</span>
+        </a>
+        <a href="https://scholarsafe.vercel.app/multimodal" target="_blank" rel="noreferrer">
+          <small>/multimodal</small>
+          <b>Multimodal</b>
+          <span>Text + visual evidence into the same Outcome boundary.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>06 / LINKS</h2>
+    <div class="case-copy">
+      <h3>Inspect the work.</h3>
+      <div class="case-links">
+        <a class="case-link primary" href="https://scholarsafe.vercel.app/demo" target="_blank" rel="noreferrer">Run live demo ↗</a>
+        <a class="case-link" href="https://scholarsafe.vercel.app" target="_blank" rel="noreferrer">Product overview ↗</a>
+        <a class="case-link" href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
