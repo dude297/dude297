@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="ColleAgent case study — privacy-first academic planning with private student context, minimum disclosure, public research agents, and counselor review."/>
+  <title>ColleAgent — Yingche Wee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <link rel="stylesheet" href="../case-study.css"/>
+</head>
+<body class="case-body">
+<header class="case-header">
+  <a href="../index.html">← PORTFOLIO</a>
+  <a href="../resume.html">RÉSUMÉ</a>
+</header>
+
+<main class="case-main">
+  <section class="case-hero">
+    <div class="case-index">CASE STUDY / 02</div>
+    <h1>ColleAgent</h1>
+    <p class="case-deck">
+      A privacy-first academic planning system that separates sensitive student context from public research while keeping the final plan evidence-backed and counselor-reviewable.
+    </p>
+    <div class="case-meta">
+      <div><small>TYPE</small><strong>Multi-agent planning</strong></div>
+      <div><small>STATUS</small><strong>Pre-production alpha</strong></div>
+      <div><small>FLOW</small><strong>Goals → Evidence → Plan</strong></div>
+      <div><small>FOCUS</small><strong>Privacy + correctness</strong></div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>01 / PROBLEM</h2>
+    <div class="case-copy">
+      <h3>Academic planning needs private context and public evidence at the same time.</h3>
+      <p>
+        A useful planner may need a student's transcript, GPA, schedule, forward plan, major goals, and constraints.
+        But public research agents should not need those sensitive records just to look up articulation rules, program requirements,
+        course equivalencies, deadlines, or college policies.
+      </p>
+
+      <div class="case-grid">
+        <div class="case-block">
+          <small>PRIVATE CONTEXT</small>
+          <h4>Keep student records campus-side</h4>
+          <p>Profile, transcript, GPA, schedule, and forward-plan data remain inside the private planning boundary.</p>
+        </div>
+        <div class="case-block">
+          <small>PUBLIC RESEARCH</small>
+          <h4>Send only what research requires</h4>
+          <p>Public agents receive school labels, program/major targets, and bare course codes rather than the student's identity or grades.</p>
+        </div>
+        <div class="case-block">
+          <small>PLANNING</small>
+          <h4>Deterministic constraints matter</h4>
+          <p>Requirements, course matching, schedule feasibility, and plan structure should not depend on free-form model improvisation.</p>
+        </div>
+        <div class="case-block">
+          <small>HUMAN AUTHORITY</small>
+          <h4>Counselor stays in the loop</h4>
+          <p>The system is designed to support review and correction rather than silently replacing academic advising authority.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>02 / PRIVACY ARCHITECTURE</h2>
+    <div class="case-copy">
+      <h3>Minimum disclosure is an architectural boundary, not a prompt.</h3>
+
+      <div class="privacy-arch">
+        <div class="privacy-zone privacy-private">
+          <small>PRIVATE / CAMPUS SIDE</small>
+          <h4>Student planning context</h4>
+          <ul>
+            <li>identity + profile</li>
+            <li>transcript / grades / GPA</li>
+            <li>schedule + constraints</li>
+            <li>forward plan</li>
+            <li>deterministic planner</li>
+          </ul>
+        </div>
+
+        <div class="privacy-gate">
+          <span>MINIMUM DISCLOSURE</span>
+          <b>→</b>
+          <small>fail closed</small>
+        </div>
+
+        <div class="privacy-zone">
+          <small>PUBLIC / RESEARCH SIDE</small>
+          <h4>Evidence gathering</h4>
+          <ul>
+            <li>college + major</li>
+            <li>public school labels</li>
+            <li>bare course codes</li>
+            <li>catalog / articulation research</li>
+            <li>source evidence + confidence</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        The Bridge mediates requests between the private planner and public research side. The disclosure packet is intentionally narrow:
+        public research does not require the student's name, GPA, transcript, or detailed grades to answer public academic-policy questions.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>03 / SYSTEM FLOW</h2>
+    <div class="case-copy">
+      <h3>The user experience is three steps; the system underneath is not.</h3>
+      <div class="flow">
+        <div class="flow-step">
+          <div>
+            <b>Goals</b>
+            <span>Capture target colleges, majors, planning horizon, timing, and student constraints on the private side.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Evidence</b>
+            <span>Generate minimum-disclosure research requests, crawl authoritative public sources, and surface exact-major evidence with fail-closed matching.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Plan</b>
+            <span>Combine private student context with researched requirements inside the private planner, then produce ranked schedules and warnings.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div>
+            <b>Counselor review</b>
+            <span>Keep confidence, evidence gaps, changes, and corrections visible so the plan can be reviewed rather than treated as unquestionable output.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>04 / IMPLEMENTATION</h2>
+    <div class="case-copy">
+      <h3>Product software around the agent boundary.</h3>
+      <div class="research-panel">
+        <div>
+          <small>CLIENT</small>
+          <b>Next.js</b>
+          <span>Mobile-first Goals → Evidence → Plan flow and signed-session experience.</span>
+        </div>
+        <div>
+          <small>BRIDGE</small>
+          <b>FastAPI + SQLite</b>
+          <span>Per-route authorization, environment-scoped state, append-only change log, and snapshots.</span>
+        </div>
+        <div>
+          <small>RESEARCH</small>
+          <b>Public research layer</b>
+          <span>Crawl/sitemap path with Playwright fallback, source evidence, exact-major matching, and failure flags.</span>
+        </div>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-block">
+          <small>PLANNING</small>
+          <h4>Deterministic core</h4>
+          <p>Course matching, requirement handling, feasibility, and ranked plan generation are separated from open-ended research reasoning.</p>
+        </div>
+        <div class="case-block">
+          <small>FAILURE HANDLING</small>
+          <h4>Research can fail visibly</h4>
+          <p>Failed or uncertain research is recorded and flagged rather than silently converted into confident planning facts.</p>
+        </div>
+        <div class="case-block">
+          <small>AUDITABILITY</small>
+          <h4>Changes are inspectable</h4>
+          <p>Snapshots and append-only changes make planning evolution easier to review and debug.</p>
+        </div>
+        <div class="case-block">
+          <small>LONG-TERM DIRECTION</small>
+          <h4>Campus-local agent runtime</h4>
+          <p>The current MVP keeps the campus runtime in-process; a Flower-based campus-local grid is the production direction rather than a current deployment claim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>05 / CURRENT STATE</h2>
+    <div class="case-copy">
+      <h3>Alpha software moving toward a counselor-in-loop pilot.</h3>
+
+      <div class="research-status">
+        <div>
+          <span class="status-mark status-done">✓</span>
+          <div><b>3-step product flow</b><small>Goals → Evidence → Plan built</small></div>
+        </div>
+        <div>
+          <span class="status-mark status-done">✓</span>
+          <div><b>Privacy + access controls</b><small>minimum-disclosure and authorization paths implemented</small></div>
+        </div>
+        <div>
+          <span class="status-mark status-done">✓</span>
+          <div><b>Research + planning plumbing</b><small>catalog research, fallback browser path, logging, deterministic planning</small></div>
+        </div>
+        <div>
+          <span class="status-mark status-next">→</span>
+          <div><b>Pilot readiness</b><small>accuracy benchmark, computed confidence, staging, load check, sign-in emails</small></div>
+        </div>
+      </div>
+
+      <p>
+        The current goal is not a polished consumer launch. It is a small, observable pilot where research accuracy,
+        privacy boundaries, confidence, and counselor corrections can be measured before broader deployment.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2>06 / DESIGN PRINCIPLE</h2>
+    <div class="case-copy">
+      <h3>Minimal agents. Minimal disclosure. Minimal compute.</h3>
+      <p>
+        ColleAgent deliberately avoids turning every subtask into another autonomous agent.
+        Private planning stays private, public research is scoped to public evidence, and deterministic logic handles the constraints that should be exact.
+      </p>
+    </div>
+  </section>
+</main>
+</body>
+</html>
