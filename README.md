@@ -19,32 +19,34 @@
 
 <br/>
 
-## ⚡ What I'm building
+## Selected builds
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🔁 Converge
+### 01 — Converge
 **Durable outcomes for AI agents.**
 
-Agents reason about what should happen; Converge persists the desired outcome, independently checks authoritative systems, and deterministically repairs only the remaining safe drift.
+Agents choose the desired outcome; Converge persists it, observes authoritative systems, and deterministically repairs only the remaining safe drift.
 
 <code>Gemini</code> <code>Supabase</code> <code>Stripe</code> <code>Next.js</code> <code>Vercel</code>
 
-<a href="https://scholarsafe.vercel.app"><b>↗ Live demo</b></a>
+<a href="https://dude297.github.io/dude297/projects/converge.html"><b>Case study →</b></a>
+&nbsp;·&nbsp;
+<a href="https://scholarsafe.vercel.app/demo"><b>Live demo ↗</b></a>
 
 </td>
 <td width="50%" valign="top">
 
-### 🏠 HomeHub
-**Local-first AI + systems infrastructure.**
+### 02 — ColleAgent
+**Private planning. Public research. Minimum disclosure.**
 
-A distributed home compute stack with durable state, bounded workers, recovery, release control, local services, Raspberry Pi edge nodes, and private automation.
+A privacy-first academic planning system that keeps transcript/GPA/scheduling context campus-side while public agents receive only the evidence needed for research.
 
-<code>Python</code> <code>Linux</code> <code>SQLite</code> <code>Raspberry Pi</code> <code>Tailscale</code>
+<code>Next.js</code> <code>FastAPI</code> <code>SQLite</code> <code>Agents</code> <code>Privacy</code>
 
-**private / active development**
+<a href="https://dude297.github.io/dude297/projects/colleagent.html"><b>Case study →</b></a>
 
 </td>
 </tr>
@@ -52,26 +54,26 @@ A distributed home compute stack with durable state, bounded workers, recovery, 
 <tr>
 <td width="50%" valign="top">
 
-### 🎓 ScholarSafe
-**Student housing built around trust.**
+### 03 — HomeHub
+**Local-first distributed infrastructure.**
 
-Verified listings, safety-oriented workflows, roommate matching, moderation, saved searches, and a production-oriented Supabase security model.
+A home-compute stack with durable state, bounded execution, release authority, recovery, local services, Raspberry Pi edge nodes, and private automation.
 
-<code>Next.js</code> <code>Supabase</code> <code>Postgres</code> <code>Tailwind</code> <code>Vercel</code>
+<code>Python</code> <code>Linux</code> <code>SQLite</code> <code>Raspberry Pi</code> <code>Tailscale</code>
 
-<a href="https://scholarsafe-io2.vercel.app"><b>↗ Project</b></a>
+<a href="https://dude297.github.io/dude297/projects/homehub.html"><b>Case study →</b></a>
 
 </td>
 <td width="50%" valign="top">
 
-### 🦾 After the Shield
-**VLA safety intervention research.**
+### 04 — After the Shield
+**Causal VLA safety research.**
 
-Studying how runtime safety interventions causally change the <i>future nominal behavior</i> of vision-language-action policies.
+Studying whether a runtime safety intervention changes a vision-language-action policy's next nominal proposal using paired counterfactual simulator branches.
 
-<code>Python</code> <code>Jupyter</code> <code>VLA</code> <code>SafeLIBERO</code> <code>Research</code>
+<code>Python</code> <code>Jupyter</code> <code>π₀.₅-LIBERO</code> <code>SafeLIBERO</code> <code>Causal design</code>
 
-**research / active development**
+<a href="https://dude297.github.io/dude297/projects/after-the-shield.html"><b>Case study →</b></a>
 
 </td>
 </tr>
