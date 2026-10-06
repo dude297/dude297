@@ -145,3 +145,5 @@ body{font-size:17px}
   .project-card p{font-size:15.5px}
   .project-links a{font-size:13.5px}
 }
+
+.project-icon.mono{font:600 12px "JetBrains Mono",monospace;letter-spacing:.08em;color:#58a6ff;margin:28px 0 22px}
