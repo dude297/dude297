@@ -37,3 +37,43 @@ body.case-body{background:#0d1117}
 .flow-step b{font-size:15px}
 .flow-step span{font-size:14.5px;line-height:1.6}
 .case-link{font-size:14px}
+
+
+/* Converge evidence + product surface system */
+.case-header-links{display:flex;align-items:center;gap:18px}
+.arch-node-focus{border-color:#58a6ff;background:#101923}
+.arch-systems{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.arch-systems span{border-top:1px solid #30363d;padding:11px 12px 0;font:600 10px "JetBrains Mono",monospace;color:#6e7681;letter-spacing:.06em}
+.state-trace{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr;align-items:stretch;margin-top:28px;border-top:1px solid #30363d;border-bottom:1px solid #30363d}
+.state-step{padding:18px 14px;background:#0d1117}
+.state-step-top{display:flex;gap:9px;align-items:center}
+.state-step-top span{font:600 10px "JetBrains Mono",monospace;color:#58a6ff}
+.state-step-top b{font-size:14px}
+.state-step p{font-size:13px;line-height:1.55;margin:12px 0;color:#8b949e}
+.state-step small{display:block;font:600 9px "JetBrains Mono",monospace;letter-spacing:.08em;color:#6e7681}
+.state-failure{background:#170f11}
+.state-failure .state-step-top span,.state-failure small{color:#ff938a}
+.state-success{background:#0d1711}
+.state-success .state-step-top span,.state-success small{color:#78dba9}
+.state-connector{display:grid;place-items:center;border-left:1px solid #30363d;border-right:1px solid #30363d;color:#58a6ff;font-family:"JetBrains Mono",monospace}
+.evidence-strip{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;border:1px solid #30363d}
+.evidence-strip div{padding:16px;border-right:1px solid #30363d}
+.evidence-strip div:last-child{border-right:0}
+.evidence-strip small{display:block;margin-bottom:6px;font:600 9px "JetBrains Mono",monospace;color:#6e7681;letter-spacing:.08em}
+.evidence-strip strong{font-size:14px}
+.surface-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+.surface-grid a{display:grid;gap:6px;padding:18px;border:1px solid #30363d;background:#10161f;transition:.16s ease}
+.surface-grid a:hover{border-color:#58a6ff;transform:translateY(-2px)}
+.surface-grid small{font:600 10px "JetBrains Mono",monospace;color:#58a6ff}
+.surface-grid b{font-size:16px}
+.surface-grid span{color:#8b949e;font-size:13.5px;line-height:1.55}
+@media(max-width:900px){
+  .state-trace{grid-template-columns:1fr}
+  .state-connector{min-height:28px;border-left:0;border-right:0;border-top:1px solid #30363d;border-bottom:1px solid #30363d;transform:rotate(90deg)}
+}
+@media(max-width:760px){
+  .case-header-links{gap:12px}
+  .arch-systems,.evidence-strip,.surface-grid{grid-template-columns:1fr}
+  .evidence-strip div{border-right:0;border-bottom:1px solid #30363d}
+  .evidence-strip div:last-child{border-bottom:0}
+}
