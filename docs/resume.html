@@ -23,6 +23,21 @@
     .note{font-size:11.5px;color:#738095;border-top:1px solid var(--line);padding-top:14px;margin-top:26px}
     @media(max-width:700px){.page{padding:34px 26px}.two{grid-template-columns:1fr}header{grid-template-columns:1fr}.contact{text-align:left}.item{grid-template-columns:1fr}.meta{white-space:normal}.toolbar span{display:none}}
     @media print{body{background:#fff}.toolbar{display:none}.page{width:auto;margin:0;box-shadow:none;padding:0}.page{font-size:88%}@page{size:letter;margin:.5in}}
+      .resume-label{font:600 10px "JetBrains Mono",monospace;letter-spacing:.11em;color:#2563eb;margin-bottom:10px}
+    .location{color:#64748b;font-size:12px;margin-top:8px}
+    .education-entry{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:6px 0;font-size:14px}
+    .text-muted{color:#667085}.small-copy{color:#475569;font-size:12.4px;line-height:1.58;margin:8px 0 0}
+    .project-role{font-weight:500;color:#64748b;font-size:12px}
+    .compact-item{font-size:12.3px;margin:0 0 13px;line-height:1.5}
+    .compact-item strong{display:block;font-weight:700}
+    .compact-item span{display:block;color:#475569}
+    .project p{font-size:12.8px;line-height:1.55}
+    .project{padding:11px 0}.project .stack{text-align:right}
+    .project-head{align-items:flex-start}.project h3{font-size:14.4px}.project a:hover,.contact a:hover,.note a:hover{color:var(--accent);text-decoration:underline}
+    section{margin:20px 0}.section-title{margin-bottom:9px}.lead-section{margin-top:22px}.summary{font-size:13px;line-height:1.6}
+    .page{padding:44px 48px}.two{gap:22px}header{margin-bottom:20px;gap:14px}
+    @media(max-width:700px){.page{padding:30px 22px}.project-head{display:block}.project .stack{display:block;text-align:left;margin-top:4px}.education-entry{display:block}.contact{text-align:left}}
+    @media print{.page{padding:0}.toolbar{display:none}section{margin:16px 0}.project{padding:8px 0}.two{gap:18px}.small-copy{font-size:11.3px}.project p{font-size:11.8px}.page{font-size:95%}@page{size:letter;margin:.48in}}
   </style>
 </head>
 <body>
@@ -36,101 +51,64 @@
 
   <article class="page">
     <header>
-      <div>
-        <h1>Yingche Wee</h1>
-        <div class="role">Electrical Engineering / Computer Science student · builder · researcher</div>
+      <div><div class="resume-label">FIELD NOTES / RESUME_2026</div><h1>Yingche Wee</h1>
+        <div class="role">Student engineer · AI systems · full-stack · embedded Linux / electronics</div>
+        <div class="location">San Jose, California · Graduating June 2027</div>
       </div>
       <div class="contact">
-        github.com/dude297<br/>
-        software ↔ systems ↔ hardware
+        <a href="mailto:yingchewee@gmail.com">yingchewee@gmail.com</a><br/>
+        <a href="https://github.com/dude297" target="_blank" rel="noreferrer">github.com/dude297 ↗</a><br/>
+        <a href="https://www.linkedin.com/in/yingche-wee" target="_blank" rel="noreferrer">linkedin.com/in/yingche-wee ↗</a><br/>
+        <a href="./index.html">Project portfolio ↗</a>
       </div>
     </header>
-
-    <section>
+    <section class="lead-section">
       <div class="section-title">Profile</div>
-      <p class="summary">
-        Student engineer building across AI agent infrastructure, full-stack products, local-first systems,
-        embedded Linux, electronics, and VLA safety research. Strongest work centers on making complex systems
-        reliable under real constraints: external APIs, durable state, failure recovery, security boundaries,
-        deployment, and reproducible experimentation.
-      </p>
+      <p class="summary">I build software that works beyond the demo: AI-agent reliability, privacy-aware applications, local-first Linux systems, and hardware prototypes. I like tracing failures across models, APIs, state, networks, and physical devices, then making recovery and correctness explicit.</p>
     </section>
-
+    <section class="edu-section">
+      <div class="section-title">Education</div>
+      <div class="education-entry"><div><strong>Mission Early College High School</strong> <span class="text-muted">· Santa Clara, CA</span></div><span class="meta">EXPECTED JUN 2027</span></div>
+      <div class="education-entry"><div><strong>Mission College</strong> <span class="text-muted">· Dual enrollment</span></div><span class="meta">2024–PRESENT</span></div>
+      <p class="small-copy">Selected coursework: Multivariable Calculus, Differential Equations, Circuit Analysis and Lab, Engineering Physics, Java Data Structures, Chemistry, Data Science.</p>
+    </section>
     <section>
-      <div class="section-title">Selected Engineering Work</div>
-
+      <div class="section-title">Selected engineering projects</div>
       <div class="project">
-        <div class="project-head"><h3>Converge — Durable outcome infrastructure for AI agents</h3><span class="stack">Gemini · Supabase · Stripe · Next.js</span></div>
-        <p>Separated agent reasoning from mutation authority; persisted desired business outcomes; reconciled authoritative Stripe/Supabase state; implemented idempotent crash recovery and safe second-agent no-op behavior.</p>
+        <div class="project-head"><h3><a href="./projects/scholarsafe.html">ScholarSafe ↗</a> <span class="project-role">Co-founder &amp; engineering lead</span></h3><span class="stack">Next.js · TypeScript · Supabase</span></div>
+        <p>Lead a housing and roommate-matching product spanning authentication, weighted matching, messaging, moderation, row-level security, and deployment. Built reliability checks with <strong>400+ passing automated tests</strong>.</p>
       </div>
-
       <div class="project">
-        <div class="project-head"><h3>HomeHub — Local-first distributed home infrastructure</h3><span class="stack">Python · Linux · SQLite · Raspberry Pi</span></div>
-        <p>Built durable local state, bounded worker execution, release control, recovery, private automation, network services, and edge-node integrations across Linux and Raspberry Pi systems.</p>
+        <div class="project-head"><h3><a href="./projects/converge.html">Converge ↗</a> <span class="project-role">Agent reliability</span></h3><span class="stack">Gemini · Stripe · Supabase</span></div>
+        <p>Designed durable outcome reconciliation for AI agents: separate model reasoning from write authority, observe actual Stripe/Supabase state, and recover safely from partial failures and retries.</p>
       </div>
-
       <div class="project">
-        <div class="project-head"><h3>ScholarSafe — Student housing + roommate platform</h3><span class="stack">Next.js · Supabase · Postgres · Vercel</span></div>
-        <p>Implemented verified roles, realtime messaging, saved searches, roommate matching, moderation flows, security-focused row-level policies, CI, and production deployment.</p>
+        <div class="project-head"><h3><a href="./projects/homehub.html">HomeHub ↗</a> <span class="project-role">Distributed Linux infrastructure</span></h3><span class="stack">Python · Pi · SQLite · Matrix</span></div>
+        <p>Built a two-node local AI platform with Raspberry Pi edge services, secure network communications, durable state, sandboxed tools, watchdogs, and fail-closed controls; <strong>300+ automated tests</strong>.</p>
       </div>
-
       <div class="project">
-        <div class="project-head"><h3>After the Shield — VLA safety intervention research</h3><span class="stack">Python · Jupyter · SafeLIBERO</span></div>
-        <p>Designed a reproducible research program around the causal effect of runtime safety interventions on future nominal VLA behavior, with frozen experimental semantics and explicit go/no-go gates.</p>
+        <div class="project-head"><h3><a href="https://github.com/dude297/plasma-dynamic-wallpaper" target="_blank" rel="noreferrer">Plasma Dynamic Wallpaper ↗</a> <span class="project-role">Published open-source software</span></h3><span class="stack">Python · KDE · systemd</span></div>
+        <p>Shipped a <a href="https://pypi.org/project/plasma-dynamic-wallpaper/" target="_blank" rel="noreferrer">PyPI package</a> translating Apple Dynamic Desktop HEIC schedules into KDE wallpaper transitions, including multi-monitor behavior, solar-time alignment, caching, and diagnostics.</p>
       </div>
-
       <div class="project">
-        <div class="project-head"><h3>Internship Finder — Personal opportunity engine</h3><span class="stack">React · FastAPI · Postgres · Playwright</span></div>
-        <p>Built verified-source ingestion, time-aware eligibility checks, deterministic fit scoring, application tracking, private profile ingestion, CI, and a zero-cost production deployment architecture.</p>
-      </div>
-
-      <div class="project">
-        <div class="project-head"><h3>Plasma Dynamic Wallpaper — Open-source KDE utility</h3><span class="stack">Python · KDE · systemd · HEIC</span></div>
-        <p>Published a PyPI package that decodes Apple Dynamic Desktop metadata, schedules wallpaper transitions, supports solar alignment, multi-monitor reconciliation, diagnostics, caching, and systemd automation.</p>
+        <div class="project-head"><h3><a href="./projects/colleagent.html">ColleAgent ↗</a> <span class="project-role">Privacy-first agent prototype</span></h3><span class="stack">Next.js · FastAPI · Agents</span></div>
+        <p>Designed campus-side private planning and public course research agents separated by minimum disclosure and deterministic academic constraints. <em>Pre-production prototype.</em></p>
       </div>
     </section>
-
     <div class="two">
       <section>
-        <div class="section-title">Technical Focus</div>
-        <div class="chips">
-          <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span>
-          <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">FastAPI</span>
-          <span class="chip">PostgreSQL</span><span class="chip">Supabase</span><span class="chip">Docker</span>
-          <span class="chip">Linux</span><span class="chip">GitHub Actions</span><span class="chip">Playwright</span>
-          <span class="chip">Raspberry Pi</span><span class="chip">Electronics</span><span class="chip">FPGA / Verilog</span>
-          <span class="chip">AI agents</span><span class="chip">ML research</span><span class="chip">CI/CD</span>
-        </div>
+        <div class="section-title">Research &amp; leadership</div>
+        <div class="compact-item"><strong>AI research collaboration · San José State University</strong><span>Contribute testing and technical feedback on K–12 educational AI with a research team (2024–present).</span></div>
+        <div class="compact-item"><strong>AI Club · Founder &amp; president</strong><span>Led 12+ peer workshops on Python, machine learning, and practical AI (2023–2025).</span></div>
+        <div class="compact-item"><strong>School &amp; community leadership</strong><span>ASB Vice President / former Student Council Treasurer; Orion Abacus outreach coordinator and former treasurer.</span></div>
       </section>
-
       <section>
-        <div class="section-title">Coursework / Foundations</div>
-        <div class="chips">
-          <span class="chip">Calculus I–III</span><span class="chip">Multivariable Calculus</span>
-          <span class="chip">Linear Algebra</span><span class="chip">Physics</span><span class="chip">Circuit Analysis</span>
-          <span class="chip">Python</span><span class="chip">Data Science</span><span class="chip">Regression Modeling</span>
-          <span class="chip">Deep Learning / LLMs</span>
-        </div>
+        <div class="section-title">Skills &amp; selected recognition</div>
+        <p class="small-copy"><strong>Languages:</strong> Python, TypeScript/JavaScript, SQL, Java, C++, Verilog.<br/><strong>Systems:</strong> Linux, Docker, systemd, Tailscale, Matrix, CI, testing, Raspberry Pi.<br/><strong>Application/AI:</strong> Next.js, FastAPI, PostgreSQL, Supabase, model evaluation, Jupyter.</p>
+        <p class="small-copy"><strong>Recognition:</strong> 1st place BizWorld Innovation Sprint; Special Congressional Recognition (Solar Suitcase project); Phi Theta Kappa; Wu Family Scholarship.</p>
       </section>
     </div>
-
-    <section>
-      <div class="section-title">Engineering Strengths</div>
-      <div class="item">
-        <h3>Systems thinking</h3><span class="meta">state · boundaries · failure modes</span>
-        <p>Comfortable moving between product behavior and the lower-level mechanisms that make it reliable: state machines, ownership rules, idempotency, recovery, observability, and deployment.</p>
-      </div>
-      <div class="item">
-        <h3>Cross-layer building</h3><span class="meta">software ↔ hardware</span>
-        <p>Projects span AI/ML, web applications, Linux infrastructure, Raspberry Pi systems, electronics, and planned FPGA interfaces.</p>
-      </div>
-      <div class="item">
-        <h3>Documentation + reproducibility</h3><span class="meta">handoffs · runbooks · experiments</span>
-        <p>Maintains explicit project state, release evidence, architecture decisions, test plans, and experimental semantics so work can be reproduced and continued.</p>
-      </div>
-    </section>
-
-    <p class="note">Public portfolio: github.com/dude297 · Some larger active projects are private while under development.</p>
+    <p class="note">Project details and current build status: <a href="./index.html">dude297.github.io/dude297/</a>. Additional active engineering work is private or in prototype stages.</p>
   </article>
 </body>
 </html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="174" viewBox="0 0 1200 174" role="img" aria-labelledby="title desc">
+<title id="title">Engineering systems map</title>
+<desc id="desc">The connected layers of an engineering stack: intelligence, applications, infrastructure, and physical systems.</desc>
+<rect width="1200" height="174" rx="6" fill="#0d1117"/><rect x=".5" y=".5" width="1199" height="173" rx="5.5" stroke="#30363d" fill="none"/>
+<g stroke="#30363d"><path d="M300 20V154M600 20V154M900 20V154"/><path d="M33 132H1167" stroke-dasharray="2 7"/></g>
+<g fill="#7d8590" font-family="monospace" font-size="12" letter-spacing="1.5"><text x="30" y="34">FIELD MAP / 2026</text><text x="1170" y="34" text-anchor="end">FOUR LAYERS / ONE SYSTEM</text></g>
+<g font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="600" fill="#f0f3f6"><text x="35" y="82">Intelligence</text><text x="335" y="82">Applications</text><text x="635" y="82">Infrastructure</text><text x="935" y="82">Physical systems</text></g>
+<g font-family="monospace" font-size="13" fill="#9ba9bc"><text x="35" y="106">Agents / VLA research</text><text x="335" y="106">Products / workflows</text><text x="635" y="106">State / recovery / CI</text><text x="935" y="106">Linux / Pi / FPGA</text></g>
+<rect x="54" y="131" width="900" height="2" fill="#58a6ff" opacity=".65"/><g fill="#58a6ff"><circle cx="54" cy="132" r="5"/><circle cx="354" cy="132" r="5"/><circle cx="654" cy="132" r="5"/><circle cx="954" cy="132" r="5"/></g>
+<g font-family="monospace" font-size="10" fill="#7d8590"><text x="34" y="157">L4</text><text x="334" y="157">L3</text><text x="634" y="157">L2</text><text x="934" y="157">L1</text></g>
+</svg>

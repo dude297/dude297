@@ -147,3 +147,50 @@ body{font-size:17px}
 }
 
 .project-icon.mono{font:600 12px "JetBrains Mono",monospace;letter-spacing:.08em;color:#58a6ff;margin:28px 0 22px}
+
+/* Engineering field-notes polish */
+html{scroll-padding-top:90px}
+:target{scroll-margin-top:90px}
+.kicker,.layer-index,.method>span{color:#79b8ff}
+.hero{gap:42px}.hero h1{font-size:clamp(50px,6.4vw,88px)}
+.gradient-text{color:#e0e7f0}
+.systems-board{border:1px solid var(--line);background:#10161e}
+.board-head,.board-foot{display:flex;justify-content:space-between;gap:14px;padding:15px 21px;font-size:10px;letter-spacing:.08em;color:#8b949e}
+.board-head{border-bottom:1px solid var(--line)}.board-foot{border-top:1px solid var(--line);color:#7b8ba2}
+.board-intro{padding:30px 24px 21px}.board-kicker{font-size:10px;color:#79b8ff;letter-spacing:.15em}
+.board-intro h2{font-size:clamp(27px,2.4vw,37px);letter-spacing:-.045em;line-height:1.16;margin:16px 0}
+.board-intro p{font-size:14px;color:#a6b3c5;line-height:1.65;margin:0}
+.board-list{border-top:1px solid var(--line)}
+.board-list a{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:center;padding:17px 24px;border-bottom:1px solid #30363d;transition:background .15s}
+.board-list a:last-child{border-bottom:0}.board-list a:hover,.board-list a:focus-visible{background:#1a2635}
+.board-list a:focus-visible{outline:2px solid #79b8ff;outline-offset:-2px}
+.board-num{font:500 11px "JetBrains Mono",monospace;color:#79b8ff}
+.board-list strong{font-size:15px}
+.board-list a>span:last-child{font:500 11px "JetBrains Mono",monospace;color:#99aabc;text-align:right}
+.project-feature{border-color:#476583;background:linear-gradient(135deg,#101c2b,#0d1117 72%)}
+.project-feature::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:#58a6ff}
+.reveal{opacity:1;transform:none;transition:none}
+.js-motion .reveal{opacity:0;transform:translateY(15px);transition:opacity .55s ease,transform .55s ease}
+.js-motion .reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.site-header{gap:12px}.nav{display:flex;gap:2px}.nav a{padding:8px 9px;font-size:13px}}
+@media(max-width:600px){
+.brand-text{display:none}.nav{margin-left:auto}.nav a:nth-child(2),.nav a:nth-child(3){display:none}
+.hero{padding-top:54px}.board-intro{padding:24px 18px}
+.board-list a{padding:15px 18px;grid-template-columns:22px 1fr}
+.board-list a>span:last-child{grid-column:2;text-align:left}
+.board-head,.board-foot{padding:13px 18px}
+.board-head span:last-child,.board-foot span:last-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1;transform:none;transition:none}}
+
+/* The terminal is a working project index, not a decorative screenshot. */
+.board-traffic{display:inline-flex;gap:5px;align-items:center;margin-right:2px}
+.board-traffic i{width:7px;height:7px;border-radius:50%;border:1px solid #667085;background:#667085}
+.board-traffic i:first-child{background:#58a6ff;border-color:#58a6ff}
+.terminal-command{font-size:13px;color:#d4e2f1;margin:0 0 18px;white-space:nowrap}
+.term-prompt{color:#79b8ff;font-weight:700;margin-right:8px}
+.term-cursor{display:inline-block;color:#79b8ff;animation:blink 1s steps(1,end) infinite}
+.board-kicker{display:block}
+.board-head>span:last-child{margin-left:auto}
+@media(max-width:600px){.board-head{gap:10px}.board-head>span:nth-child(2){font-size:10px}.board-head>span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.term-cursor{animation:none}}
