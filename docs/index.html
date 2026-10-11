@@ -4,7 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Yingche Wee — EE/CS student building AI systems, infrastructure, research tooling, and embedded hardware." />
-  <meta name="theme-color" content="#070b16" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yingche Wee — Engineering Portfolio" />
+  <meta property="og:description" content="AI agents, distributed systems, local infrastructure, embedded hardware. Real engineering projects and case studies." />
+  <meta property="og:url" content="https://dude297.github.io/dude297/" />
+  <link rel="canonical" href="https://dude297.github.io/dude297/" />
   <title>Yingche Wee — Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,12 +23,12 @@
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Home">
       <span class="brand-mark">YW</span>
-      <span class="brand-text">dude297</span>
+      <span class="brand-text">Yingche Wee</span>
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a href="#work">Work</a>
       <a href="#systems">Systems</a>
-      <a href="#research">Research</a>
+      <a href="#project-research">Research</a>
       <a href="./resume.html">Résumé</a>
     </nav>
     <a class="button button-ghost header-cta" href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -50,25 +55,17 @@
         </div>
       </div>
 
-      <div class="hero-console reveal" aria-label="Project status console">
-        <div class="console-top">
-          <div class="traffic"><span></span><span></span><span></span></div>
-          <div class="console-title">builder://dude297/status</div>
-          <div class="console-pill">LIVE</div>
-        </div>
-        <div class="console-body mono">
-          <p><span class="muted">$</span> inspect --active-projects</p>
-          <p><span class="cyan">CONVERGE</span> <span class="muted">→</span> durable outcomes for AI agents</p>
-          <p><span class="violet">COLLEAGENT</span> <span class="muted">→</span> private academic planning agents</p>
-          <p><span class="violet">HOMEHUB</span> <span class="muted">→</span> local-first distributed infra</p>
-          <p><span class="green">SCHOLARSAFE</span> <span class="muted">→</span> student housing platform</p>
-          <p><span class="amber">VLA SAFETY</span> <span class="muted">→</span> causal intervention research</p>
-          <p class="console-gap"><span class="muted">$</span> philosophy</p>
-          <p><span class="green">✓</span> reason about constraints</p>
-          <p><span class="green">✓</span> build the smallest real system</p>
-          <p><span class="green">✓</span> attack failure modes</p>
-          <p><span class="green">✓</span> ship + observe<span class="blink">_</span></p>
-        </div>
+      <div class="systems-board reveal" aria-label="Current engineering work">
+        <div class="board-head mono"><span>YW / ENGINEERING LOG</span><span>BUILD INDEX / 2026</span></div>
+        <div class="board-intro"><span class="board-kicker mono">SOFTWARE ↔ SYSTEMS ↔ HARDWARE</span>
+          <h2>From model output to real-world state.</h2>
+          <p>Four active fronts. One recurring question: what happens when the happy path fails?</p></div>
+        <div class="board-list">
+          <a href="#project-converge"><span class="board-num">01</span><strong>Converge</strong><span>Agent reliability ↗</span></a>
+          <a href="#project-colleagent"><span class="board-num">02</span><strong>ColleAgent</strong><span>Private planning ↗</span></a>
+          <a href="#project-homehub"><span class="board-num">03</span><strong>HomeHub</strong><span>Local infrastructure ↗</span></a>
+          <a href="#project-research"><span class="board-num">04</span><strong>After the Shield</strong><span>VLA research ↗</span></a>
+        </div><div class="board-foot mono"><span>MODEL → BUILD → BREAK → SHIP</span><span>HW ↔ SW</span></div>
       </div>
     </section>
 
@@ -89,7 +86,7 @@
       </div>
 
       <div class="project-grid">
-        <article class="project-card project-feature reveal">
+        <article class="project-card project-feature reveal" id="project-converge">
           <div class="project-no">01</div>
           <div class="project-icon mono">OUTCOME → REALITY</div>
           <div class="project-tags"><span>AI AGENTS</span><span>RELIABILITY</span></div>
@@ -108,7 +105,7 @@
           <div class="card-orbit" aria-hidden="true"></div>
         </article>
 
-        <article class="project-card reveal">
+        <article class="project-card reveal" id="project-colleagent">
           <div class="project-no">02</div>
           <div class="project-icon mono">PRIVATE ↔ PUBLIC</div>
           <div class="project-tags"><span>AGENTS</span><span>PRIVACY</span></div>
@@ -124,7 +121,7 @@
           <div class="privacy-badge">PRE-PRODUCTION ALPHA / PILOT</div>
         </article>
 
-        <article class="project-card reveal">
+        <article class="project-card reveal" id="project-homehub">
           <div class="project-no">03</div>
           <div class="project-icon">⌂</div>
           <div class="project-tags"><span>LOCAL-FIRST</span><span>INFRA</span></div>
@@ -148,7 +145,7 @@
           </div>
         </article>
 
-        <article class="project-card reveal" id="research">
+        <article class="project-card reveal" id="project-research">
           <div class="project-no">05</div>
           <div class="project-icon">Δ</div>
           <div class="project-tags"><span>RESEARCH</span><span>VLA</span></div>
@@ -270,6 +267,7 @@
     <div class="footer-links">
       <a href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub</a>
       <a href="./resume.html">Résumé</a>
+      <a href="https://www.linkedin.com/in/yingche-wee" target="_blank" rel="noreferrer">LinkedIn ↗</a>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
