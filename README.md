@@ -35,6 +35,10 @@ Agents choose the desired outcome; Converge persists it, observes authoritative 
 <code>Gemini</code> <code>Supabase</code> <code>Stripe</code> <code>Next.js</code> <code>Vercel</code>
 
 <a href="https://dude297.github.io/dude297/projects/converge.html"><b>Case study →</b></a>
+&nbsp;·&nbsp;
+<a href="https://scholarsafe.vercel.app"><b>Converge live demo ↗</b></a>
+
+<sub>Converge uses a legacy <code>scholarsafe.vercel.app</code> deployment alias; it is not the ScholarSafe product.</sub>
 
 
 </td>
