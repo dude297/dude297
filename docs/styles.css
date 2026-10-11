@@ -182,3 +182,15 @@ html{scroll-padding-top:90px}
 .board-head span:last-child,.board-foot span:last-child{display:none}
 }
 @media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1;transform:none;transition:none}}
+
+/* The terminal is a working project index, not a decorative screenshot. */
+.board-traffic{display:inline-flex;gap:5px;align-items:center;margin-right:2px}
+.board-traffic i{width:7px;height:7px;border-radius:50%;border:1px solid #667085;background:#667085}
+.board-traffic i:first-child{background:#58a6ff;border-color:#58a6ff}
+.terminal-command{font-size:13px;color:#d4e2f1;margin:0 0 18px;white-space:nowrap}
+.term-prompt{color:#79b8ff;font-weight:700;margin-right:8px}
+.term-cursor{display:inline-block;color:#79b8ff;animation:blink 1s steps(1,end) infinite}
+.board-kicker{display:block}
+.board-head>span:last-child{margin-left:auto}
+@media(max-width:600px){.board-head{gap:10px}.board-head>span:nth-child(2){font-size:10px}.board-head>span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.term-cursor{animation:none}}
