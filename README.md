@@ -14,7 +14,7 @@
 
 <p align="center">
   <b>I build systems that have to work outside the demo.</b><br/>
-  <sub>AI agents · distributed systems · local infrastructure · embedded Linux · FPGA / electronics</sub>
+  <sub>AI agents · distributed systems · local infrastructure · embedded Linux · electronics</sub>
 </p>
 
 <br/>
@@ -86,6 +86,17 @@ Studying whether a runtime safety intervention changes a vision-language-action 
 
 <br/>
 
+## Tools I build with
+
+Rather than rating myself with percentages, I link the tools to things I have actually built.
+
+| Layer | Working toolkit | Example |
+| :-- | :-- | :-- |
+| **Languages** | Python · TypeScript / JavaScript · SQL; Java and C++ through coursework | [HomeHub](https://dude297.github.io/dude297/projects/homehub.html) · [ColleAgent](https://dude297.github.io/dude297/projects/colleagent.html) |
+| **Product + data** | Next.js · React · FastAPI · Supabase / PostgreSQL · SQLite | [Converge](https://dude297.github.io/dude297/projects/converge.html) · [ScholarSafe](https://dude297.github.io/dude297/projects/scholarsafe.html) |
+| **Systems + testing** | Linux · Docker · systemd · GitHub Actions · Tailscale · Playwright | [Plasma Dynamic Wallpaper](https://github.com/dude297/plasma-dynamic-wallpaper) · [HomeHub](https://dude297.github.io/dude297/projects/homehub.html) |
+| **Agents + hardware** | Agent tool use · model evaluation · Jupyter · Raspberry Pi · electronics; FPGA / Verilog in exploration | [ColleAgent](https://dude297.github.io/dude297/projects/colleagent.html) · [VLA research](https://dude297.github.io/dude297/projects/after-the-shield.html) |
+
 ## Public builds you can inspect
 
 These projects have runnable public source, not just architecture write-ups.
@@ -110,18 +121,8 @@ These projects have runnable public source, not just architecture write-ups.
 
 <br/>
 
-<details>
-<summary><b>More things I work on</b></summary>
-<br/>
+**Beyond code:** I co-founded and help lead engineering for ScholarSafe, founded an AI Club with 12+ peer workshops, and collaborate on educational AI evaluation with San José State University. <a href="https://dude297.github.io/dude297/resume.html">More in my résumé →</a>
 
-- 🤖 AI agent reliability, tool use, reconciliation, and governance
-- 🧠 ML / VLA research and reproducible experimentation
-- 🐧 Linux automation and local-first infrastructure
-- 🍓 Raspberry Pi systems and embedded interfaces
-- ⚡ Circuits, electronics, FPGA / Verilog, and hardware-software integration
-- 🌐 Full-stack products with security, CI, tests, and real deployments
-
-</details>
 
 <br/>
 
