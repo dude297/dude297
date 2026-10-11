@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Yingche Wee — EE/CS student building AI systems, infrastructure, research tooling, and embedded hardware." />
+  <meta name="description" content="Yingche Wee is an EE/CS student and co-founder building AI agents, reliable software, Linux infrastructure and hands-on electronics. Explore real projects and technical skills." />
   <meta name="theme-color" content="#0d1117" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Yingche Wee — Engineering Portfolio" />
@@ -27,8 +27,8 @@
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a href="#work">Work</a>
-      <a href="#systems">Systems</a>
-      <a href="#project-research">Research</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#about">About</a>
       <a href="./resume.html">Résumé</a>
     </nav>
     <a class="button button-ghost header-cta" href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -43,15 +43,16 @@
           <span class="gradient-text">survive the edge cases.</span>
         </h1>
         <p class="hero-lede">
-          EE/CS student working on AI agent reliability, local-first infrastructure,
-          full-stack products, embedded Linux, electronics, and VLA safety research.
+          EE/CS student, co-founder, and open-source builder working across AI agents,
+          full-stack products, Linux infrastructure, and hands-on electronics.
+          I care about what happens after the happy-path demo.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#work">Explore the work ↓</a>
           <a class="button button-ghost" href="./resume.html">Open résumé</a>
         </div>
         <div class="signal-row" aria-label="Focus areas">
-          <span>AI AGENTS</span><i></i><span>SYSTEMS</span><i></i><span>EMBEDDED</span><i></i><span>RESEARCH</span>
+          <span>AI &amp; AGENTS</span><i></i><span>PRODUCT ENGINEERING</span><i></i><span>LINUX</span><i></i><span>HARDWARE</span>
         </div>
       </div>
 
@@ -69,11 +70,11 @@
       </div>
     </section>
 
-    <section class="proof shell reveal" aria-label="Portfolio summary">
-      <div><strong>8</strong><span>featured builds</span></div>
-      <div><strong>4</strong><span>engineering layers</span></div>
-      <div><strong>0→1</strong><span>product mindset</span></div>
-      <div><strong>HW↔SW</strong><span>end-to-end scope</span></div>
+    <section class="proof shell reveal" aria-label="Engineering focus areas">
+      <div><strong>SHIPPED</strong><span>Full-stack products</span></div>
+      <div><strong>OPEN SOURCE</strong><span>Published Python utility</span></div>
+      <div><strong>LOCAL FIRST</strong><span>Distributed Linux systems</span></div>
+      <div><strong>HARDWARE</strong><span>Electronics and Raspberry Pi</span></div>
     </section>
 
     <section class="section shell" id="work">
@@ -198,39 +199,43 @@
       </div>
     </section>
 
-    <section class="section shell" id="systems">
+    <section class="section shell toolkit-section" id="toolkit">
       <div class="section-heading reveal">
-        <div>
-          <span class="kicker">ENGINEERING RANGE</span>
-          <h2>One stack, multiple layers.</h2>
-        </div>
-        <p>The projects change, but the same pattern keeps showing up: model the boundary, make state explicit, then test what happens when the happy path fails.</p>
+        <div><span class="kicker">THE TOOLKIT / IN PRACTICE</span><h2>Skills with receipts.</h2></div>
+        <p>Not a wall of logos. These are the tools and methods I use in real projects, with the work linked below each group.</p>
       </div>
-
-      <div class="layers">
-        <div class="layer reveal">
-          <span class="layer-index">L4</span>
-          <div><h3>Intelligence</h3><p>Agent reasoning, tool use, ML experimentation, VLA research.</p></div>
-          <div class="layer-tech">Gemini · Python · notebooks</div>
-        </div>
-        <div class="layer reveal">
-          <span class="layer-index">L3</span>
-          <div><h3>Applications</h3><p>Full-stack products, realtime UX, auth, workflows, scoring.</p></div>
-          <div class="layer-tech">Next.js · React · FastAPI</div>
-        </div>
-        <div class="layer reveal">
-          <span class="layer-index">L2</span>
-          <div><h3>Infrastructure</h3><p>Durable state, deployment, CI/CD, recovery, API boundaries.</p></div>
-          <div class="layer-tech">Postgres · Supabase · Docker · Linux</div>
-        </div>
-        <div class="layer reveal">
-          <span class="layer-index">L1</span>
-          <div><h3>Physical systems</h3><p>Embedded Linux, circuits, Raspberry Pi, FPGA interfaces.</p></div>
-          <div class="layer-tech">Pi · electronics · Verilog</div>
-        </div>
+      <div class="skill-grid">
+        <article class="skill-card reveal">
+          <div class="skill-head"><span class="skill-index">01 / LANGUAGES</span><span aria-hidden="true">⌘</span></div>
+          <h3>Build the logic.</h3>
+          <p>Most of my application and systems code is in <strong>Python</strong> and <strong>TypeScript / JavaScript</strong>, with <strong>SQL</strong> for data and state. I also work with Java and C++ through coursework and experiments.</p>
+          <div class="skill-chips"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span><span>Java</span><span>C++</span></div>
+          <div class="skill-proof"><span>USED IN</span><a href="#project-homehub">HomeHub ↗</a><a href="#project-colleagent">ColleAgent ↗</a></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-head"><span class="skill-index">02 / APPLICATIONS</span><span aria-hidden="true">◇</span></div>
+          <h3>Ship a product.</h3>
+          <p>Full-stack workflows with authentication, realtime state, data access rules and durable APIs. I use <strong>Next.js / React</strong>, <strong>FastAPI</strong>, <strong>Supabase / PostgreSQL</strong>, and <strong>SQLite</strong>.</p>
+          <div class="skill-chips"><span>Next.js</span><span>React</span><span>FastAPI</span><span>Supabase</span><span>PostgreSQL</span><span>SQLite</span></div>
+          <div class="skill-proof"><span>USED IN</span><a href="#project-converge">Converge ↗</a><a href="./projects/scholarsafe.html">ScholarSafe ↗</a></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-head"><span class="skill-index">03 / SYSTEMS</span><span aria-hidden="true">▧</span></div>
+          <h3>Make it reliable.</h3>
+          <p>Linux-first development, tests, deployment and recovery. Working tools include <strong>Docker</strong>, <strong>GitHub Actions</strong>, <strong>systemd</strong>, <strong>Tailscale</strong>, <strong>Matrix</strong> and <strong>Playwright</strong>.</p>
+          <div class="skill-chips"><span>Linux</span><span>Docker</span><span>GitHub Actions</span><span>systemd</span><span>Tailscale</span><span>Playwright</span></div>
+          <div class="skill-proof"><span>USED IN</span><a href="#project-homehub">HomeHub ↗</a><a href="https://github.com/dude297/plasma-dynamic-wallpaper" target="_blank" rel="noreferrer">KDE utility ↗</a></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-head"><span class="skill-index">04 / AGENTS + HARDWARE</span><span aria-hidden="true">⌁</span></div>
+          <h3>Cross the boundary.</h3>
+          <p>Agent orchestration, model evaluation and local LLM experiments meet <strong>Raspberry Pi</strong>, circuit integration and electronics. <strong>FPGA / Verilog</strong> is an area of active exploration, not a claim of production expertise.</p>
+          <div class="skill-chips"><span>AI agents</span><span>Jupyter</span><span>Gemini</span><span>Raspberry Pi</span><span>Circuits</span><span>Verilog (exploring)</span></div>
+          <div class="skill-proof"><span>USED IN</span><a href="#project-colleagent">ColleAgent ↗</a><a href="#project-research">VLA research ↗</a></div>
+        </article>
       </div>
+      <div class="toolkit-note reveal"><span class="mono">TECHNICAL DEPTH ≠ ICON COUNT</span><p>I prefer showing an architecture, a working demo, and how it fails and recovers over listing every library I have tried. <a href="./resume.html">Full technical résumé ↗</a></p></div>
     </section>
-
     <section class="section shell">
       <div class="section-heading reveal">
         <div>
@@ -246,11 +251,26 @@
       </div>
     </section>
 
+    <section class="about-band shell reveal" id="about">
+      <div class="about-side">
+        <span class="kicker">THE PERSON BEHIND THE TERMINAL</span>
+        <h2>Builder, teammate, peer teacher.</h2>
+        <p>I am a dual-enrollment engineering student at Mission Early College High School and Mission College. I help lead ScholarSafe engineering, founded my school’s AI Club, and collaborate on K–12 educational AI research with San José State University.</p>
+        <p>The through-line is building something useful and then making it understandable to someone else.</p>
+        <div class="about-actions"><a class="button button-primary" href="mailto:yingchewee@gmail.com">Say hello ↗</a><a class="button button-ghost" href="./resume.html">Education and experience ↗</a></div>
+      </div>
+      <div class="about-facts" aria-label="Selected leadership and project experience">
+        <div><span class="fact-code mono">01 / PRODUCT</span><strong>ScholarSafe</strong><span>Co-founder and engineering lead</span></div>
+        <div><span class="fact-code mono">02 / TEACHING</span><strong>AI Club</strong><span>Founder; 12+ peer workshops</span></div>
+        <div><span class="fact-code mono">03 / RESEARCH</span><strong>SJSU collaboration</strong><span>Educational AI evaluation and testing</span></div>
+        <div><span class="fact-code mono">04 / HARDWARE</span><strong>Solar Suitcase</strong><span>Off-grid system built and tested</span></div>
+      </div>
+    </section>
     <section class="resume-cta shell reveal">
       <div>
         <span class="kicker">RÉSUMÉ</span>
         <h2>Need the condensed version?</h2>
-        <p>Open the print-optimized résumé for coursework, technical strengths, selected projects, and engineering focus.</p>
+        <p>Browse my technical résumé for education, hands-on experience, project outcomes, leadership, and the tools I use.</p>
       </div>
       <div class="resume-actions">
         <a class="button button-primary" href="./resume.html">View résumé →</a>
