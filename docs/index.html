@@ -8,8 +8,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Yingche Wee — Engineering Portfolio" />
   <meta property="og:description" content="AI agents, distributed systems, local infrastructure, embedded hardware. Real engineering projects and case studies." />
-  <meta property="og:url" content="https://dude297.github.io/dude297/" />
-  <link rel="canonical" href="https://dude297.github.io/dude297/" />
+  <meta property="og:url" content="https://weeche.com/" />
+  <link rel="canonical" href="https://weeche.com/" />
   <title>Yingche Wee — Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,35 +38,34 @@
   <main id="top">
     <section class="hero shell">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="status-dot"></span> building across software, systems & hardware</div>
+        <div class="eyebrow"><span class="status-dot"></span> student engineer · product builder</div>
         <h1>
-          I build systems that
-          <span class="gradient-text">survive the edge cases.</span>
+          Useful products.
+          <span class="gradient-text">Reliable engineering.</span>
         </h1>
         <p class="hero-lede">
-          EE/CS student, co-founder, and open-source builder working across AI agents,
-          full-stack products, Linux infrastructure, and hands-on electronics.
-          I care about what happens after the happy-path demo.
+          I’m Yingche Wee, an EE/CS student and ScholarSafe co-founder.
+          I build software and electronics, lead engineering work, and help others learn.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#work">Explore the work ↓</a>
           <a class="button button-ghost" href="./resume.html">Open résumé</a>
         </div>
         <div class="signal-row" aria-label="Focus areas">
-          <span>AI &amp; AGENTS</span><i></i><span>PRODUCT ENGINEERING</span><i></i><span>LINUX</span><i></i><span>HARDWARE</span>
+          <span>PRODUCTS</span><i></i><span>SYSTEMS</span><i></i><span>HARDWARE</span>
         </div>
       </div>
 
       <div class="systems-board reveal" aria-label="Current engineering work">
         <div class="board-head mono"><span class="board-traffic" aria-hidden="true"><i></i><i></i><i></i></span><span>yw@workbench:~/projects</span><span>SESSION / 2026</span></div>
         <div class="board-intro"><div class="terminal-command mono"><span class="term-prompt">❯</span> inspect --featured<span class="term-cursor" aria-hidden="true">_</span></div><span class="board-kicker mono">SOFTWARE ↔ SYSTEMS ↔ HARDWARE</span>
-          <h2>From model output to real-world state.</h2>
-          <p>Four active fronts. One recurring question: what happens when the happy path fails?</p></div>
+          <h2>What I’m building.</h2>
+          <p>Explore the products, engineering decisions, and work in progress.</p></div>
         <div class="board-list">
           <a href="#project-converge"><span class="board-num">01</span><strong>Converge</strong><span>Agent reliability ↗</span></a>
-          <a href="#project-colleagent"><span class="board-num">02</span><strong>ColleAgent</strong><span>Private planning ↗</span></a>
+          <a href="#project-scholarsafe"><span class="board-num">02</span><strong>ScholarSafe</strong><span>Student housing ↗</span></a>
           <a href="#project-homehub"><span class="board-num">03</span><strong>HomeHub</strong><span>Local infrastructure ↗</span></a>
-          <a href="#project-research"><span class="board-num">04</span><strong>After the Shield</strong><span>VLA research ↗</span></a>
+          <a href="#project-colleagent"><span class="board-num">04</span><strong>ColleAgent</strong><span>Academic planning ↗</span></a>
         </div><div class="board-foot mono"><span><span class="term-prompt">✓</span> 4 entries indexed · inspect a build above</span><span>HW ↔ SW</span></div>
       </div>
     </section>
@@ -82,9 +81,9 @@
       <div class="section-heading reveal">
         <div>
           <span class="kicker">SELECTED WORK</span>
-          <h2>Projects with real constraints.</h2>
+          <h2>Products &amp; engineering.</h2>
         </div>
-        <p>Not toy demos: systems with state, external APIs, security boundaries, deployment, hardware, or experimental rigor.</p>
+        <p>What each project does, what I built, and the engineering behind it. Prototypes and research are labeled with their current stage.</p>
       </div>
 
       <div class="project-grid">
@@ -93,11 +92,11 @@
           <div class="project-icon mono">OUTCOME → REALITY</div>
           <div class="project-tags"><span>AI AGENTS</span><span>RELIABILITY</span></div>
           <h3>Converge</h3>
-          <p>Durable outcome infrastructure for autonomous agents. The model selects a desired outcome; Converge persists it, observes authoritative state, and deterministically repairs only the remaining safe drift.</p>
+          <p>I built a prototype that helps AI workflows recover when a task stops halfway through. It checks what already happened in Stripe and Supabase, then completes only the missing actions.</p>
           <ul class="project-points">
-            <li>Gemini reasoning separated from mutation authority</li>
-            <li>Stripe + Supabase reconciliation with idempotency</li>
-            <li>Crash recovery and second-agent no-op behavior</li>
+            <li>The model proposes a goal; validated code controls writes</li>
+            <li>Ownership checks and retries that avoid duplicate refunds</li>
+            <li>Demonstrated recovery after a simulated interruption</li>
           </ul>
           <div class="stack">Gemini · Supabase · Stripe · Next.js · Vercel</div>
           <div class="project-links">
@@ -112,11 +111,11 @@
           <div class="project-icon mono">PRIVATE ↔ PUBLIC</div>
           <div class="project-tags"><span>AGENTS</span><span>PRIVACY</span></div>
           <h3>ColleAgent</h3>
-          <p>A privacy-first academic planning system that keeps student records on the private campus side while sending only minimum-disclosure research requests to public agents.</p>
+          <p>I designed an academic planning prototype that helps students and counselors review course options. Student records stay private while research agents look up public course requirements.</p>
           <ul class="project-points">
             <li>Goals → Evidence → Plan counselor workflow</li>
-            <li>Fail-closed minimum-disclosure boundary</li>
-            <li>Deterministic planning + evidence-backed research</li>
+            <li>Research requests exclude student identity and grades</li>
+            <li>Rule-based planning with sources and visible research gaps</li>
           </ul>
           <div class="stack">Next.js · FastAPI · SQLite · Flower direction · Playwright</div>
           <div class="project-links"><a href="./projects/colleagent.html">Case study →</a></div>
@@ -128,18 +127,18 @@
           <div class="project-icon">⌂</div>
           <div class="project-tags"><span>LOCAL-FIRST</span><span>INFRA</span></div>
           <h3>HomeHub</h3>
-          <p>A distributed home-compute platform spanning a Linux core, Raspberry Pi edge nodes, durable state, release control, recovery, private automation, and bounded execution.</p>
+          <p>I built a local AI and automation system connecting a Linux computer with Raspberry Pi services. It keeps task history, limits what tools can do, and handles interruptions and recovery.</p>
           <div class="stack">Python · Linux · SQLite · Raspberry Pi · Tailscale</div>
           <div class="project-links"><a href="./projects/homehub.html">Case study →</a></div>
           <div class="privacy-badge">PRIVATE / ACTIVE BUILD</div>
         </article>
 
-        <article class="project-card reveal">
+        <article class="project-card reveal" id="project-scholarsafe">
           <div class="project-no">04</div>
           <div class="project-icon">⌁</div>
           <div class="project-tags"><span>PRODUCT</span><span>FULL STACK</span></div>
           <h3>ScholarSafe</h3>
-          <p>Student housing and roommate matching with verified roles, saved searches, moderation workflows, realtime messaging, security-focused Supabase policies, and production CI.</p>
+          <p>I co-founded ScholarSafe and lead engineering for its student housing and roommate-matching platform. I build the search, matching, messaging, verification, and moderation workflows, with database access controls and automated testing.</p>
           <div class="stack">Next.js · Supabase · Postgres · Tailwind · Vercel</div>
           <div class="project-links">
             <a href="./projects/scholarsafe.html">Case study →</a>
@@ -152,7 +151,7 @@
           <div class="project-icon">Δ</div>
           <div class="project-tags"><span>RESEARCH</span><span>VLA</span></div>
           <h3>After the Shield</h3>
-          <p>Researching the causal effect of runtime safety interventions on the future nominal behavior of vision-language-action policies, with frozen experimental semantics and reproducibility gates.</p>
+          <p>I’m studying how a robot’s next proposed action changes after a safety system corrects its previous action. The project is in simulator and model setup; the paired experiments have not produced results yet.</p>
           <div class="stack">Python · Jupyter · SafeLIBERO · π₀.₅-LIBERO · Causal design</div>
           <div class="project-links"><a href="./projects/after-the-shield.html">Case study →</a></div>
           <div class="privacy-badge">RESEARCH / SPRINT 0</div>
@@ -163,7 +162,7 @@
           <div class="project-icon">◎</div>
           <div class="project-tags"><span>TOOLS</span><span>DATA</span></div>
           <h3>Internship Finder</h3>
-          <p>A production-minded personal opportunity engine with verified job-board sources, time-aware eligibility, deterministic fit scoring, application tracking, and zero-cost hosting.</p>
+          <p>I built a personal tool to find internships and research opportunities, check eligibility, explain why a listing fits, and track applications. It uses verified job-board sources and scheduled updates.</p>
           <div class="stack">React · TypeScript · FastAPI · Postgres · Playwright</div>
           <div class="project-links">
             <a href="https://github.com/dude297/internship-finder" target="_blank" rel="noreferrer">Source ↗</a>
@@ -179,7 +178,7 @@
             <div class="project-no">07</div>
             <div class="project-tags"><span>OPEN SOURCE</span><span>LINUX</span></div>
             <h3>Plasma Dynamic Wallpaper</h3>
-            <p>Brings Apple's Dynamic Desktop HEIC wallpapers to KDE Plasma while preserving embedded schedules or aligning frames to local solar time.</p>
+            <p>I published a Python utility that brings Apple’s changing desktop wallpapers to KDE Plasma. It follows the original schedule or local solar time, supports multiple monitors, and includes background services and diagnostics.</p>
             <div class="stack">Python · KDE Plasma · systemd · HEIC</div>
             <div class="project-links">
               <a href="https://github.com/dude297/plasma-dynamic-wallpaper" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -193,7 +192,7 @@
           <div class="project-icon">▧</div>
           <div class="project-tags"><span>EMBEDDED</span><span>HARDWARE</span></div>
           <h3>Cyberdeck</h3>
-          <p>A custom Raspberry Pi Zero 2 W cyberdeck with touchscreen-first UI, system telemetry, modular power, and a planned FPGA coprocessor path over SPI.</p>
+          <p>I’m building a portable Linux computer around a Raspberry Pi Zero 2 W, touchscreen, and modular power supply. A future FPGA connection is planned; the current work focuses on the device and interface.</p>
           <div class="stack">Raspberry Pi · Linux · Python · SPI · FPGA</div>
           <div class="privacy-badge">PRIVATE / HARDWARE BUILD</div>
         </article>
@@ -202,8 +201,8 @@
 
     <section class="section shell toolkit-section" id="toolkit">
       <div class="section-heading reveal">
-        <div><span class="kicker">THE TOOLKIT / IN PRACTICE</span><h2>Skills with receipts.</h2></div>
-        <p>Not a wall of logos. These are the tools and methods I use in real projects, with the work linked below each group.</p>
+        <div><span class="kicker">THE TOOLKIT / IN PRACTICE</span><h2>Skills used in real work.</h2></div>
+        <p>Tools I use to build products, manage data, test systems, and work with hardware. Each group links to a project example.</p>
       </div>
       <div class="skill-grid">
         <article class="skill-card reveal">
@@ -230,12 +229,12 @@
         <article class="skill-card reveal">
           <div class="skill-head"><span class="skill-index">04 / AGENTS + HARDWARE</span><span aria-hidden="true">⌁</span></div>
           <h3>Cross the boundary.</h3>
-          <p>Agent orchestration, model evaluation and local LLM experiments meet <strong>Raspberry Pi</strong>, circuit integration and electronics. <strong>FPGA / Verilog</strong> is an area of active exploration, not a claim of production expertise.</p>
+          <p>I work with AI agents, model evaluation, local language models, <strong>Raspberry Pi</strong>, and circuit integration. I’m also exploring <strong>FPGA / Verilog</strong> through hardware experiments.</p>
           <div class="skill-chips"><span>AI agents</span><span>Jupyter</span><span>Gemini</span><span>Raspberry Pi</span><span>Circuits</span><span>Verilog (exploring)</span></div>
           <div class="skill-proof"><span>USED IN</span><a href="#project-colleagent">ColleAgent ↗</a><a href="#project-research">VLA research ↗</a></div>
         </article>
       </div>
-      <div class="toolkit-note reveal"><span class="mono">TECHNICAL DEPTH ≠ ICON COUNT</span><p>I prefer showing an architecture, a working demo, and how it fails and recovers over listing every library I have tried. <a href="./resume.html">Full technical résumé ↗</a></p></div>
+      <div class="toolkit-note reveal"><span class="mono">SEE THE WORK BEHIND THE TOOLS</span><p>The case studies explain the design choices, current limitations, and testing behind each project. <a href="./resume.html">Engineering résumé ↗</a></p></div>
     </section>
     <section class="section shell">
       <div class="section-heading reveal">

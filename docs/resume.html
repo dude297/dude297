@@ -38,6 +38,30 @@
     .page{padding:44px 48px}.two{gap:22px}header{margin-bottom:20px;gap:14px}
     @media(max-width:700px){.page{padding:30px 22px}.project-head{display:block}.project .stack{display:block;text-align:left;margin-top:4px}.education-entry{display:block}.contact{text-align:left}}
     @media print{.page{padding:0}.toolbar{display:none}section{margin:16px 0}.project{padding:8px 0}.two{gap:18px}.small-copy{font-size:11.3px}.project p{font-size:11.8px}.page{font-size:95%}@page{size:letter;margin:.48in}}
+    /* Screen reading sizes are independent of the compact print layout. */
+    @media screen{
+      .summary{font-size:16px;line-height:1.7}
+      .small-copy,.project p,.compact-item{font-size:15px;line-height:1.7}
+      .project h3{font-size:17px}.project-role{font-size:14px}
+      .project .stack,.meta,.resume-label,.section-title{font-size:13px}
+      .location,.contact,.note{font-size:14px;line-height:1.65}
+      .note{color:#526071}.section-title{margin-bottom:12px}
+      .contact a{display:inline-block;padding:3px 0}
+      section{margin:26px 0}.project{padding:17px 0}.compact-item{margin-bottom:18px}
+    }
+    @media screen and (max-width:700px){
+      .page{width:calc(100% - 20px);margin:18px auto;padding:28px 20px}
+      .summary,.small-copy,.project p,.compact-item{font-size:16px;line-height:1.7}
+      .education-entry{font-size:16px;line-height:1.65}
+      .project h3{font-size:18px;line-height:1.5}
+      .project-role{display:block;font-size:15px;margin-top:2px}
+      .project .stack{font-size:13px;line-height:1.6}
+      .meta{display:block;font-size:13px;margin-top:4px}
+      .contact,.location,.note{font-size:14px}
+      .two{gap:0}.page header{gap:18px}
+      .toolbar{padding:10px;gap:8px;flex-wrap:wrap}
+      .toolbar .btn{font-size:13px;min-height:44px;padding:10px}
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 </head>
@@ -65,7 +89,7 @@
     </header>
     <section class="lead-section">
       <div class="section-title">Profile</div>
-      <p class="summary">I build software that works beyond the demo: AI-agent reliability, privacy-aware applications, local-first Linux systems, and hardware prototypes. I like tracing failures across models, APIs, state, networks, and physical devices, then making recovery and correctness explicit.</p>
+      <p class="summary">Student engineer and ScholarSafe co-founder building products, AI workflows, Linux systems, and hardware prototypes. I lead engineering work, test how systems behave when something fails, and teach peers through practical AI workshops.</p>
     </section>
     <section class="edu-section">
       <div class="section-title">Education</div>
@@ -81,7 +105,7 @@
       </div>
       <div class="project">
         <div class="project-head"><h3><a href="./projects/converge.html">Converge ↗</a> <span class="project-role">Agent reliability</span></h3><span class="stack">Gemini · Stripe · Supabase</span></div>
-        <p>Designed durable outcome reconciliation for AI agents: separate model reasoning from write authority, observe actual Stripe/Supabase state, and recover safely from partial failures and retries.</p>
+        <p>Built a prototype that helps AI workflows recover after partial execution. It checks Stripe and Supabase for completed actions, then safely finishes the remaining work without duplicating a refund.</p>
       </div>
       <div class="project">
         <div class="project-head"><h3><a href="./projects/homehub.html">HomeHub ↗</a> <span class="project-role">Distributed Linux infrastructure</span></h3><span class="stack">Python · Pi · SQLite · Matrix</span></div>
@@ -93,7 +117,7 @@
       </div>
       <div class="project">
         <div class="project-head"><h3><a href="./projects/colleagent.html">ColleAgent ↗</a> <span class="project-role">Privacy-first agent prototype</span></h3><span class="stack">Next.js · FastAPI · Agents</span></div>
-        <p>Designed campus-side private planning and public course research agents separated by minimum disclosure and deterministic academic constraints. <em>Pre-production prototype.</em></p>
+        <p>Designed an academic planning prototype that keeps student records private while research agents look up public course requirements. Built authorization, audit logging, and rule-based planning. <em>Pre-production prototype.</em></p>
       </div>
     </section>
     <div class="two">
@@ -109,7 +133,7 @@
         <p class="small-copy"><strong>Recognition:</strong> 1st place BizWorld Innovation Sprint; Special Congressional Recognition (Solar Suitcase project); Phi Theta Kappa; Wu Family Scholarship.</p>
       </section>
     </div>
-    <p class="note">Project details and current build status: <a href="./index.html">dude297.github.io/dude297/</a>. Additional active engineering work is private or in prototype stages.</p>
+    <p class="note">Project details and current build status: <a href="./index.html">weeche.com</a>. Additional active engineering work is private or in prototype stages.</p>
   </article>
 </body>
 </html>

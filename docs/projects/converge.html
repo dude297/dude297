@@ -26,7 +26,7 @@
     <div class="case-index">CASE STUDY / 01</div>
     <h1>Converge</h1>
     <p class="case-deck">
-      Durable outcome infrastructure for AI agents operating across systems where partial success is more dangerous than a clean failure.
+      A prototype that helps AI workflows finish safely after an interruption, without repeating actions that already succeeded in another system.
     </p>
     <div class="case-meta">
       <div><small>TYPE</small><strong>Agent infrastructure</strong></div>
@@ -109,10 +109,10 @@
   <section class="case-section">
     <h2>03 / FAILURE TRACE</h2>
     <div class="case-copy">
-      <h3>The demo is built around a real partial failure.</h3>
+      <h3>Testing recovery after a simulated interruption.</h3>
       <p>
-        The strongest proof is not a happy path. The live flow intentionally stops after a real Stripe test-mode refund succeeds,
-        leaving the support ticket unresolved so the system has to recover from authoritative state.
+        The demo intentionally stops after a Stripe test-mode refund succeeds, leaving the support ticket unresolved.
+        This simulates an interruption so the system has to check what happened and finish only the remaining work.
       </p>
 
       <div class="state-trace" aria-label="Converge failure and recovery sequence">
