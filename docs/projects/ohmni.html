@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ohmni — Yingche Wee</title><meta name="description" content="Ohmni: schematic extraction, deterministic circuit analysis, and solver-driven fault diagnosis. Built by Yingche Wee at BuilderBase SF Tech Week."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/><link rel="stylesheet" href="../case-study.css"/><link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+</head><body class="case-body">
+<header class="case-header"><a href="../index.html">← PORTFOLIO</a><a href="../resume.html">RÉSUMÉ</a></header>
+<main class="case-main">
+<section class="case-hero"><div class="case-index">CASE STUDY / 02</div><h1>Ohmni</h1>
+<p class="case-deck">A schematic says 2.50 V. The meter reads 0.45 V. I built Ohmni to help explain that gap: confirm the circuit, calculate what it should do, and choose the next measurement that separates plausible faults.</p>
+<p class="case-origin"><strong>Origin:</strong> BuilderBase Multi Model Hackathon · SF Tech Week · October 11, 2026. I built the prototype and continued developing the diagnosis and verification workflows after submission.</p>
+<div class="case-meta"><div><small>ROLE</small><strong>Developer</strong></div><div><small>STATUS</small><strong>Working prototype / active</strong></div><div><small>CORE</small><strong>TypeScript MNA solver</strong></div><div><small>INTERFACE</small><strong>Next.js / React</strong></div></div></section>
+<section class="case-section"><h2>01 / THE PROBLEM</h2><div class="case-copy"><h3>The drawing and the measurement disagree.</h3>
+<p>For a 10 kΩ / 10 kΩ divider on a 5 V supply, the expected midpoint is 2.50 V. A measured 0.45 V is evidence to investigate. Ohmni tests alternate component values against the observation; in the recorded demo, a 1 kΩ lower resistor ranks as the first hypothesis.</p>
+<p>The product connects tasks that usually live in separate places: reading the schematic, checking connectivity, solving the circuit, recording a meter reading, and deciding what to probe next.</p></div></section>
+<section class="case-section"><h2>02 / WHAT I BUILT</h2><div class="case-copy"><h3>Model-assisted reading. Solver-owned calculations.</h3>
+<div class="flow"><div class="flow-step"><div><b>Extract a candidate graph</b><span>Groq reads the schematic, with Gemini as a fallback. Structural validation checks the graph before it can reach the solver.</span></div></div><div class="flow-step"><div><b>Make uncertainty reviewable</b><span>The user can correct component values and connections. The server requires a confirmed graph before solving it.</span></div></div><div class="flow-step"><div><b>Compute voltages and currents</b><span>A local TypeScript implementation of modified nodal analysis calculates expected behavior. A language model does not supply the electrical answer.</span></div></div><div class="flow-step"><div><b>Choose a useful next measurement</b><span>The probe guide re-solves candidate single faults and recommends a node whose voltage helps distinguish them. Repair verification is bound to the circuit revision.</span></div></div></div>
+<p>I also added provider fallback behavior, request limits, server-side validation, and traces that show failures and skipped calls alongside successful ones.</p></div></section>
+<section class="case-section"><h2>03 / EVIDENCE &amp; LIMITS</h2><div class="case-copy"><h3>A diagnosis is a testable hypothesis.</h3>
+<p>The repository includes the divider demonstration, solver tests, synthetic schematic fixtures, and recorded UI flows. The hackathon diagnosis path covers DC resistive circuits; its single-fault ranking is relative to the faults it models. Real-photo extraction accuracy and time saved have not been measured.</p>
+<p>The app rejects malformed or unsolvable graphs and can report that no modeled fault fits. Two models agreeing on an image does not remove the need to confirm its connections.</p>
+<div class="case-links"><a class="case-link" href="https://github.com/dude297/ohmni/blob/main/docs/demo/README.md" target="_blank" rel="noreferrer">Recorded demo evidence ↗</a><a class="case-link" href="https://github.com/dude297/ohmni/blob/main/README.md" target="_blank" rel="noreferrer">Architecture &amp; limits ↗</a></div></div></section>
+<section class="case-section"><h2>04 / EXPLORE</h2><div class="case-copy"><h3>Try the circuit lab.</h3><div class="case-links"><a class="case-link primary" href="https://multimodal-hackathon-sage.vercel.app" target="_blank" rel="noreferrer">Open Ohmni ↗</a><a class="case-link" href="https://github.com/dude297/ohmni" target="_blank" rel="noreferrer">Public source ↗</a></div></div></section>
+</main></body></html>

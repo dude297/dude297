@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="https://dude297.github.io/dude297/"><b>Portfolio</b></a>
+  <a href="https://weeche.com/"><b>Portfolio</b></a>
   &nbsp;·&nbsp;
-  <a href="https://dude297.github.io/dude297/resume.html"><b>Résumé</b></a>
+  <a href="https://weeche.com/resume.html"><b>Résumé</b></a>
   &nbsp;·&nbsp;
   <a href="https://github.com/dude297?tab=repositories"><b>Projects</b></a>
   &nbsp;·&nbsp;
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <b>I build systems that have to work outside the demo.</b><br/>
+  <b>I co-found housing software, build circuit-diagnosis tools, and connect Linux systems.</b><br/>
   <sub>AI agents · distributed systems · local infrastructure · embedded Linux · electronics</sub>
 </p>
 
@@ -23,90 +23,57 @@
 
 ## Selected builds
 
-<table>
-<tr>
-<td width="50%" valign="top">
+### ScholarSafe · Co-founder & Engineering Lead
+Build the student-housing and roommate-matching workflows: authentication, weighted matching, messaging, verification, moderation, and database access policies. Product checks include 400+ passing automated tests.
 
-### 01 — Converge
-**Durable outcomes for AI agents.**
+[Case study](https://weeche.com/projects/scholarsafe.html) · [Product](https://scholarsafe-io2.vercel.app)
 
-Agents choose the desired outcome; Converge persists it, observes authoritative systems, and deterministically repairs only the remaining safe drift.
+### Ohmni · Circuit diagnostics
+Built a schematic-to-diagnosis prototype at the BuilderBase SF Tech Week hackathon. Vision models propose a graph; human confirmation gates a TypeScript circuit solver. Measured voltages rank candidate faults and guide the next probe. Development continues after submission.
 
-<code>Gemini</code> <code>Supabase</code> <code>Stripe</code> <code>Next.js</code> <code>Vercel</code>
+[Case study](https://weeche.com/projects/ohmni.html) · [Source](https://github.com/dude297/ohmni) · [Try the lab](https://multimodal-hackathon-sage.vercel.app)
 
-<a href="https://dude297.github.io/dude297/projects/converge.html"><b>Case study →</b></a>
-&nbsp;·&nbsp;
-<a href="https://scholarsafe.vercel.app"><b>Converge live demo ↗</b></a>
+### Converge · Supabase Select hackathon
+Persist the intended outcome, check Stripe and Supabase, and repair only the missing work. Demonstrated recovery after a simulated interruption without repeating a completed Stripe test-mode refund.
 
-<sub>Converge uses a legacy <code>scholarsafe.vercel.app</code> deployment alias; it is not the ScholarSafe product.</sub>
+[Case study](https://weeche.com/projects/converge.html) · [Demo](https://scholarsafe.vercel.app)
 
+### HomeHub · Distributed Linux & local AI
+Connect a Raspberry Pi edge node and HP Envy compute node over Matrix and Tailscale. SQLite state, sandboxed tools, watchdogs, systemd services, and 300+ automated tests.
 
-</td>
-<td width="50%" valign="top">
+[Case study](https://weeche.com/projects/homehub.html)
 
-### 02 — ColleAgent
-**Private planning. Public research. Minimum disclosure.**
+### ColleAgent / CampusMesh · Hackathon at Stanford
+Keep student records with a private planner while public research agents receive only the fields needed to look up course requirements. Includes evidence checks, alternative plans, and counselor review; continuing as a prototype.
 
-A privacy-first academic planning system that keeps transcript/GPA/scheduling context campus-side while public agents receive only the evidence needed for research.
+[Case study](https://weeche.com/projects/colleagent.html)
 
-<code>Next.js</code> <code>FastAPI</code> <code>SQLite</code> <code>Agents</code> <code>Privacy</code>
+### After the Shield · VLA safety research
+Studying whether a safety intervention changes a robot policy’s next proposed action. Currently setting up the simulator and models; no paired experimental results yet.
 
-<a href="https://dude297.github.io/dude297/projects/colleagent.html"><b>Case study →</b></a>
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 03 — HomeHub
-**Local-first distributed infrastructure.**
-
-A home-compute stack with durable state, bounded execution, release authority, recovery, local services, Raspberry Pi edge nodes, and private automation.
-
-<code>Python</code> <code>Linux</code> <code>SQLite</code> <code>Raspberry Pi</code> <code>Tailscale</code>
-
-<a href="https://dude297.github.io/dude297/projects/homehub.html"><b>Case study →</b></a>
-
-</td>
-<td width="50%" valign="top">
-
-### 04 — After the Shield
-**Causal VLA safety research.**
-
-Studying whether a runtime safety intervention changes a vision-language-action policy's next nominal proposal using paired counterfactual simulator branches.
-
-<code>Python</code> <code>Jupyter</code> <code>π₀.₅-LIBERO</code> <code>SafeLIBERO</code> <code>Causal design</code>
-
-<a href="https://dude297.github.io/dude297/projects/after-the-shield.html"><b>Case study →</b></a>
-
-</td>
-</tr>
-</table>
-
-<br/>
+[Case study](https://weeche.com/projects/after-the-shield.html)
 
 ## Tools I build with
 
-Rather than rating myself with percentages, I link the tools to things I have actually built.
+Tools used in the projects above:
 
 | Layer | Working toolkit | Example |
 | :-- | :-- | :-- |
-| **Languages** | Python · TypeScript / JavaScript · SQL; Java and C++ through coursework | [HomeHub](https://dude297.github.io/dude297/projects/homehub.html) · [ColleAgent](https://dude297.github.io/dude297/projects/colleagent.html) |
-| **Product + data** | Next.js · React · FastAPI · Supabase / PostgreSQL · SQLite | [Converge](https://dude297.github.io/dude297/projects/converge.html) · [ScholarSafe](https://dude297.github.io/dude297/projects/scholarsafe.html) |
-| **Systems + testing** | Linux · Docker · systemd · GitHub Actions · Tailscale · Playwright | [Plasma Dynamic Wallpaper](https://github.com/dude297/plasma-dynamic-wallpaper) · [HomeHub](https://dude297.github.io/dude297/projects/homehub.html) |
-| **Agents + hardware** | Agent tool use · model evaluation · Jupyter · Raspberry Pi · electronics; FPGA / Verilog in exploration | [ColleAgent](https://dude297.github.io/dude297/projects/colleagent.html) · [VLA research](https://dude297.github.io/dude297/projects/after-the-shield.html) |
+| **Languages** | Python · TypeScript / JavaScript · SQL; Java and C++ through coursework | [HomeHub](https://weeche.com/projects/homehub.html) · [ColleAgent](https://weeche.com/projects/colleagent.html) |
+| **Product + data** | Next.js · React · FastAPI · Supabase / PostgreSQL · SQLite | [Converge](https://weeche.com/projects/converge.html) · [ScholarSafe](https://weeche.com/projects/scholarsafe.html) |
+| **Systems + testing** | Linux · Docker · systemd · GitHub Actions · Tailscale · Playwright | [Plasma Dynamic Wallpaper](https://github.com/dude297/plasma-dynamic-wallpaper) · [HomeHub](https://weeche.com/projects/homehub.html) |
+| **Agents + hardware** | Agent tool use · model evaluation · Jupyter · Raspberry Pi · electronics; FPGA / Verilog in exploration | [ColleAgent](https://weeche.com/projects/colleagent.html) · [VLA research](https://weeche.com/projects/after-the-shield.html) |
 
 ## Public builds you can inspect
 
-These projects have runnable public source, not just architecture write-ups.
+Public source and releases:
 
 | Release | What works | Explore |
 | :-- | :-- | :-- |
 | **[Plasma Dynamic Wallpaper](https://github.com/dude297/plasma-dynamic-wallpaper)** | Brings Apple Dynamic Desktop schedules and solar-time alignment to KDE Plasma; published on PyPI. | [Source](https://github.com/dude297/plasma-dynamic-wallpaper) · [PyPI](https://pypi.org/project/plasma-dynamic-wallpaper/) |
 | **[Internship Finder](https://github.com/dude297/internship-finder)** | Tracks verified opportunities, eligibility, scoring, and application state. | [Source](https://github.com/dude297/internship-finder) · [Demo](https://internship-finder-pi.vercel.app) |
 
-<p align="center"><a href="https://github.com/dude297/plasma-dynamic-wallpaper"><img src="https://raw.githubusercontent.com/dude297/plasma-dynamic-wallpaper/main/docs/demo.gif" width="82%" alt="Plasma Dynamic Wallpaper running on KDE Plasma"/></a><br/><sub>A real desktop utility, not a mockup.</sub></p>
+<p align="center"><a href="https://github.com/dude297/plasma-dynamic-wallpaper"><img src="https://raw.githubusercontent.com/dude297/plasma-dynamic-wallpaper/main/docs/demo.gif" width="82%" alt="Plasma Dynamic Wallpaper running on KDE Plasma"/></a><br/><sub>Plasma Dynamic Wallpaper running on KDE Plasma.</sub></p>
 
 ## How I build
 
@@ -121,7 +88,9 @@ These projects have runnable public source, not just architecture write-ups.
 
 <br/>
 
-**Beyond code:** I co-founded and help lead engineering for ScholarSafe, founded an AI Club with 12+ peer workshops, and collaborate on educational AI evaluation with San José State University. <a href="https://dude297.github.io/dude297/resume.html">More in my résumé →</a>
+**AI training:** Harvard Computer Society AI Bootcamp, remote, Winter 2024. Built CNNs, sentiment classifiers, and reinforcement-learning models.
+
+**Beyond code:** I co-founded and help lead engineering for ScholarSafe, founded an AI Club with 12+ peer workshops, and collaborate on educational AI evaluation with San José State University. <a href="https://weeche.com/resume.html">More in my résumé →</a>
 
 
 <br/>
