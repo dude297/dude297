@@ -89,7 +89,7 @@
     </header>
     <section class="lead-section">
       <div class="section-title">Profile</div>
-      <p class="summary">Student engineer and ScholarSafe co-founder building products, AI workflows, Linux systems, and hardware prototypes. I lead engineering work, test how systems behave when something fails, and teach peers through practical AI workshops.</p>
+      <p class="summary">ScholarSafe co-founder and engineering lead; Mission College / MECHS dual-enrollment student. Build housing and roommate-matching workflows, circuit-diagnosis tools, and Linux systems. Founded the school AI Club and led 12+ Python and AI workshops.</p>
     </section>
     <section class="edu-section">
       <div class="section-title">Education</div>
@@ -98,14 +98,23 @@
       <p class="small-copy">Selected coursework: Multivariable Calculus, Differential Equations, Circuit Analysis and Lab, Engineering Physics, Java Data Structures, Chemistry, Data Science.</p>
     </section>
     <section>
-      <div class="section-title">Selected engineering projects</div>
+      <div class="section-title">Technical training</div>
+      <div class="education-entry"><div><strong>Harvard Computer Society AI Bootcamp</strong> <span class="text-muted">· Remote</span></div><span class="meta">WINTER 2024</span></div>
+      <p class="small-copy">Built convolutional neural networks, sentiment classifiers, and reinforcement-learning models using real-world datasets. Completed the Harvard Computer Society AI certification.</p>
+    </section>
+    <section>
+      <div class="section-title">Product development &amp; selected engineering</div>
       <div class="project">
         <div class="project-head"><h3><a href="./projects/scholarsafe.html">ScholarSafe ↗</a> <span class="project-role">Co-founder &amp; engineering lead</span></h3><span class="stack">Next.js · TypeScript · Supabase</span></div>
-        <p>Lead a housing and roommate-matching product spanning authentication, weighted matching, messaging, moderation, row-level security, and deployment. Built reliability checks with <strong>400+ passing automated tests</strong>.</p>
+        <p>Lead engineering for student housing discovery and roommate matching. Build authentication, weighted matching, messaging, verification, moderation, and database access policies; validate workflows with <strong>400+ passing automated tests</strong>. Translate student and landlord feedback into product priorities.</p>
       </div>
       <div class="project">
-        <div class="project-head"><h3><a href="./projects/converge.html">Converge ↗</a> <span class="project-role">Agent reliability</span></h3><span class="stack">Gemini · Stripe · Supabase</span></div>
-        <p>Built a prototype that helps AI workflows recover after partial execution. It checks Stripe and Supabase for completed actions, then safely finishes the remaining work without duplicating a refund.</p>
+        <div class="project-head"><h3><a href="./projects/ohmni.html">Ohmni ↗</a> <span class="project-role">Developer · BuilderBase SF Tech Week hackathon</span></h3><span class="stack">TypeScript · Next.js · Circuit solver</span></div>
+        <p>Built a circuit-diagnosis tool that converts a schematic into a reviewable graph, solves node voltages with modified nodal analysis, and compares measured voltages against candidate faults. Human confirmation gates the solve; a solver-driven probe guide recommends the next measurement. Development continues beyond the hackathon.</p>
+      </div>
+      <div class="project">
+        <div class="project-head"><h3><a href="./projects/converge.html">Converge ↗</a> <span class="project-role">Developer · Supabase Select hackathon</span></h3><span class="stack">Gemini · Stripe · Supabase</span></div>
+        <p>Built durable outcome storage, ownership checks, and reconciliation across Stripe and Supabase. Demonstrated a simulated interruption after a Stripe test-mode refund: recovery repairs the ticket state while leaving the completed refund untouched.</p>
       </div>
       <div class="project">
         <div class="project-head"><h3><a href="./projects/homehub.html">HomeHub ↗</a> <span class="project-role">Distributed Linux infrastructure</span></h3><span class="stack">Python · Pi · SQLite · Matrix</span></div>
@@ -116,8 +125,8 @@
         <p>Shipped a <a href="https://pypi.org/project/plasma-dynamic-wallpaper/" target="_blank" rel="noreferrer">PyPI package</a> translating Apple Dynamic Desktop HEIC schedules into KDE wallpaper transitions, including multi-monitor behavior, solar-time alignment, caching, and diagnostics.</p>
       </div>
       <div class="project">
-        <div class="project-head"><h3><a href="./projects/colleagent.html">ColleAgent ↗</a> <span class="project-role">Privacy-first agent prototype</span></h3><span class="stack">Next.js · FastAPI · Agents</span></div>
-        <p>Designed an academic planning prototype that keeps student records private while research agents look up public course requirements. Built authorization, audit logging, and rule-based planning. <em>Pre-production prototype.</em></p>
+        <div class="project-head"><h3><a href="./projects/colleagent.html">ColleAgent ↗</a> <span class="project-role">Developer · hackathon at Stanford</span></h3><span class="stack">Next.js · FastAPI · Agents</span></div>
+        <p>Built a private planning / public research boundary for an academic-planning prototype. Student identity and grades stay with the private planner; research requests carry only the fields needed to find public requirements. Includes evidence checking, alternative plans, and counselor review. <em>Continuing as ColleAgent / CampusMesh.</em></p>
       </div>
     </section>
     <div class="two">

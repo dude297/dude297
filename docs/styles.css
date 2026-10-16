@@ -257,3 +257,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #91ceff;outline-offset:4p
  .skill-card p{font-size:16px}
 }
 @media(prefers-reduced-motion:reduce){.skill-card{transition:none}.skill-card:hover{transform:none}}
+
+/* Roles and evidence stay beside the engineering work they describe. */
+.project-evidence{margin:22px 0 0;padding-top:16px;border-top:1px solid #303d4d;font-size:14px;line-height:1.65}
+.project-evidence>div{margin:0 0 13px}.project-evidence dt{font:600 12px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.07em;color:#89b8eb;margin-bottom:4px}.project-evidence dd{margin:0;color:#b6c2d2}
+.about-facts a{color:#91c9ff;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.project-evidence{font-size:15px}.project-evidence dt{font-size:13px}.hero h1{font-size:clamp(32px,8.8vw,40px)}}
