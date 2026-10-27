@@ -27,7 +27,7 @@ if ('IntersectionObserver' in window) {
   body.classList.add('js-enabled');
 }
 
-const benchProjects = {skillforge:'A checked repair becomes a reusable skill.',ohmni:'A measurement becomes a testable circuit hypothesis.',cyberdeck:'A Rust interface meets a real Raspberry Pi.',scholarsafe:'Student housing, roommates, and the trust between them.'};
+const benchProjects = {skillforge:'A checked repair becomes a reusable skill.',ohmni:'A measurement becomes a testable circuit hypothesis.',homehub:'Two Linux nodes. Durable state. Deliberate recovery.',scholarsafe:'Student housing, roommates, and the trust between them.'};
 document.querySelectorAll('[data-bench]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-bench]').forEach(node => node.setAttribute('aria-pressed',String(node === button)));
   document.querySelector('#bench-description').textContent = benchProjects[button.dataset.bench];
@@ -80,16 +80,53 @@ setInterval(() => {
 },150);
 
 const circuitButton=document.querySelector('#circuit-toggle');
+let circuitFrame=0;
+let circuitVoltage=2.5;
+function showCircuitVoltage(value) {
+  circuitVoltage=value;
+  document.querySelector('#circuit-output').textContent=value.toFixed(3)+' V';
+}
+function transitionCircuitVoltage(target) {
+  cancelAnimationFrame(circuitFrame);
+  const start=circuitVoltage, started=performance.now();
+  if (!motionEnabled || document.hidden) {showCircuitVoltage(target);return;}
+  function frame(now) {
+    const progress=motionEnabled?Math.min((now-started)/650,1):1;
+    const eased=1-Math.pow(1-progress,3);
+    showCircuitVoltage(start+(target-start)*eased);
+    if(progress<1) circuitFrame=requestAnimationFrame(frame);
+  }
+  circuitFrame=requestAnimationFrame(frame);
+}
 circuitButton.hidden=false;
 circuitButton.addEventListener('click',() => {
   const mismatch=circuitButton.getAttribute('aria-pressed') !== 'true';
   const lowerResistance=mismatch?1000:10000;
+  const voltage=5*lowerResistance/(10000+lowerResistance);
   circuitButton.setAttribute('aria-pressed',String(mismatch));
-  document.querySelector('.circuit-scene').dataset.mismatch=String(mismatch);
+  const scene=document.querySelector('.circuit-scene');
+  scene.dataset.mismatch=String(mismatch);
+  scene.style.setProperty('--voltage',(voltage/5*100)+'%');
   document.querySelector('#r2-label').textContent=mismatch?'R2 · 1 kΩ':'R2 · 10 kΩ';
-  document.querySelector('#circuit-output').textContent=(5*lowerResistance/(10000+lowerResistance)).toFixed(3)+' V';
-  document.querySelector('#circuit-state').textContent=mismatch?'ONE RESISTOR CHANGED. A VERY DIFFERENT READING.':'THE SCHEMATIC AND THE READING AGREE';
-  circuitButton.firstChild.textContent=mismatch?'Put the 10 kΩ resistor back ':'What if R2 is actually 1 kΩ? ';
+  transitionCircuitVoltage(voltage);
+  document.querySelector('#circuit-state').textContent=mismatch?'The drawing still expects 2.500 V. A 1 kΩ R2 would produce 0.455 V — one testable explanation for the mismatch.':'Two 10 kΩ resistors divide the 5 V supply equally.';
+  circuitButton.firstChild.textContent=mismatch?'Restore the 10 kΩ resistor ':'Swap R2 to 1 kΩ ';
+});
+const hubModes={
+  execution:{label:'01 / BOUNDED EXECUTION',title:'A worker gets a boundary.',copy:'Sessions, leases, and cancellation are owned by the server. Tool access stays bounded.'},
+  recovery:{label:'02 / EXPLICIT RECOVERY',title:'A timeout is not a retry permit.',copy:'Session fencing and durable attempt history preserve uncertainty. Recovery is explicit; lease expiry never grants replay authority.'},
+  releases:{label:'03 / RELEASE CONTROL',title:'A green build is one checkpoint.',copy:'An exact candidate is validated, frozen, and staged. Promotion and rollback remain explicit decisions; advanced production execution is still gated.'}
+};
+document.querySelectorAll('[data-hub-mode]').forEach(button=>{
+  if(button.tagName!=='BUTTON') return;
+  button.addEventListener('click',()=>{
+    const mode=button.dataset.hubMode;
+    document.querySelectorAll('.hub-modes button').forEach(node=>node.setAttribute('aria-pressed',String(node===button)));
+    document.querySelector('.hub-scene').dataset.hubMode=mode;
+    document.querySelector('#hub-detail-label').textContent=hubModes[mode].label;
+    document.querySelector('#hub-detail-title').textContent=hubModes[mode].title;
+    document.querySelector('#hub-detail-copy').textContent=hubModes[mode].copy;
+  });
 });
 const deviceLayers={
   interface:{title:'Built to run\nclose to the metal.',description:'Rust / Slint renders directly through LinuxKMS. Touch navigation and boot recovery are physically validated.'},
