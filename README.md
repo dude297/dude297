@@ -50,9 +50,9 @@ Built a schematic-to-diagnosis prototype at the BuilderBase SF Tech Week hackath
 [Case study](https://weeche.com/projects/ohmni.html) · [Source](https://github.com/dude297/ohmni) · [Try the lab](https://multimodal-hackathon-sage.vercel.app)
 
 ### Converge · Supabase Select hackathon
-Persist the intended outcome, check Stripe and Supabase, and repair only the missing work. Demonstrated recovery after a simulated interruption without repeating a completed Stripe test-mode refund.
+Persist the intended outcome, check Stripe and Supabase, and repair only the missing work. Demonstrated recovery after a simulated interruption without repeating a completed Stripe test-mode refund. The hosted interactive demo is currently offline while its backend is inactive; 31 local synthetic backend checks pass.
 
-[Case study](https://weeche.com/projects/converge.html) · [Demo](https://scholarsafe.vercel.app)
+[Case study](https://weeche.com/projects/converge.html) · [Product overview](https://scholarsafe.vercel.app)
 
 ### HomeHub · Distributed Linux & local AI
 Connect a Raspberry Pi edge node and HP Envy compute node over Matrix and Tailscale. SQLite state, bounded tools, watchdogs and systemd services. Core 1.7.4 establishes recovery and release-validation foundations; durable production execution remains gated.
