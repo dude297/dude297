@@ -1,0 +1,13 @@
+/* Shared field-note treatment for the existing case studies. */
+body.case-body{background:#0a100e;color:#eeefe8;font-family:'DM Sans',Manrope,system-ui,sans-serif}
+.case-body h1,.case-body h2,.case-body h3,.case-body h4{font-family:'Space Grotesk',Manrope,system-ui,sans-serif;font-weight:500}
+.case-header{border-color:#33493a}.case-header a{color:#b5cab8}.case-header a:hover{color:#92f4c4}
+.case-index,.case-section>h2,.flow-step:before{color:#92f4c4}
+.case-hero,.case-section,.case-meta,.flow,.flow-step{border-color:#2b4232}
+.case-meta{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.case-deck,.case-copy>p,.case-copy li{color:#a8b9ac}
+.case-link{border-color:#4c6b54;color:#c9dfce}.case-link:hover{border-color:#92f4c4}
+.case-link.primary{background:#92f4c4;color:#10291a;border-color:#92f4c4}
+.case-block{background:#101b14;border-color:#314c39}.case-block small,.case-meta small{color:#9cbca4}
+.arch{background:#0c1710;border-color:#314c39}.arch-node{background:#142219;border-color:#3e5d47}.arch-arrow{color:#92f4c4}
+.case-header a:focus-visible,.case-link:focus-visible{outline-color:#92f4c4}

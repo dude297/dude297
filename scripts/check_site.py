@@ -79,9 +79,10 @@ def main() -> int:
             ET.parse(svg)
         except ET.ParseError as exc:
             errors.append(f"{svg.relative_to(ROOT)}: malformed SVG: {exc}")
-    css = ROOT / "styles.css"
-    if css.exists() and css.read_text(encoding="utf-8").count("{") != css.read_text(encoding="utf-8").count("}"):
-        errors.append("styles.css: unbalanced CSS braces")
+    for css in ROOT.rglob("*.css"):
+        content = css.read_text(encoding="utf-8")
+        if content.count("{") != content.count("}"):
+            errors.append(f"{css.relative_to(ROOT)}: unbalanced CSS braces")
 
     for error in errors:
         print("ERROR:", error, file=sys.stderr)
