@@ -18,6 +18,7 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 </head>
 <body>
+<a class="skip-link" href="#work">Skip to projects</a>
   <div class="noise" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
 
@@ -40,12 +41,12 @@
       <div class="hero-copy reveal">
         <div class="eyebrow"><span class="status-dot"></span> student engineer · product builder</div>
         <h1>
-          Student housing.
-          <span class="gradient-text">Circuit diagnostics.</span>
+          Build useful things.
+          <span class="gradient-text">Make them reliable.</span>
         </h1>
         <p class="hero-lede">
           I’m Yingche Wee, a Mission College / MECHS student and ScholarSafe co-founder.
-          I build housing and roommate-matching workflows, circuit-diagnosis software, and local AI systems. I also teach Python and AI through peer workshops.
+          I build AI systems that verify their work, products that solve everyday problems, and hardware I can hold in my hands. From student housing to circuit diagnosis, I care about what happens after the demo.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#work">Explore the work ↓</a>
@@ -60,12 +61,12 @@
         <div class="board-head mono"><span class="board-traffic" aria-hidden="true"><i></i><i></i><i></i></span><span>yw@workbench:~/projects</span><span>SESSION / 2026</span></div>
         <div class="board-intro"><div class="terminal-command mono"><span class="term-prompt">❯</span> inspect --featured<span class="term-cursor" aria-hidden="true">_</span></div><span class="board-kicker mono">SOFTWARE ↔ SYSTEMS ↔ HARDWARE</span>
           <h2>What I’m building.</h2>
-          <p>Housing search, circuit debugging, agent recovery, and local infrastructure.</p></div>
+          <p>Verified AI skills, circuit diagnosis, accessible planning, and embedded Linux.</p></div>
         <div class="board-list">
-          <a href="#project-scholarsafe"><span class="board-num">01</span><strong>ScholarSafe</strong><span>Product + leadership ↗</span></a>
-          <a href="#project-ohmni"><span class="board-num">02</span><strong>Ohmni</strong><span>Circuit diagnostics ↗</span></a>
-          <a href="#project-converge"><span class="board-num">03</span><strong>Converge</strong><span>Agent recovery ↗</span></a>
-          <a href="#project-homehub"><span class="board-num">04</span><strong>HomeHub</strong><span>Local infrastructure ↗</span></a>
+<a href="#project-skillforge"><span class="board-num">01</span><strong>SkillForge</strong><span>Verified AI skills ↗</span></a>
+<a href="#project-ohmni"><span class="board-num">02</span><strong>Ohmni</strong><span>Circuit diagnostics ↗</span></a>
+<a href="#project-daybridge"><span class="board-num">03</span><strong>DayBridge</strong><span>Accessible planning ↗</span></a>
+<a href="#project-cyberdeck"><span class="board-num">04</span><strong>Cyberdeck</strong><span>Rust + hardware ↗</span></a>
         </div><div class="board-foot mono"><span><span class="term-prompt">✓</span> 4 entries indexed · inspect a build above</span><span>HW ↔ SW</span></div>
       </div>
     </section>
@@ -73,7 +74,7 @@
     <section class="proof shell reveal" aria-label="Engineering focus areas">
       <div><strong>CO-FOUNDER</strong><span>ScholarSafe engineering</span></div>
       <div><strong>OPEN SOURCE</strong><span>KDE utility published on PyPI</span></div>
-      <div><strong>2 NODES</strong><span>HomeHub core + Raspberry Pi</span></div>
+      <div><strong>LOCAL AI</strong><span>SkillForge verified reuse on GB10</span></div>
       <div><strong>12+ WORKSHOPS</strong><span>Python and AI peer teaching</span></div>
     </section>
 
@@ -83,12 +84,31 @@
           <span class="kicker">SELECTED WORK</span>
           <h2>Products &amp; engineering.</h2>
         </div>
-        <p>What each project does, what I built, and the engineering behind it. Prototypes and research are labeled with their current stage.</p>
+        <p>What each project does, what I built, and the engineering behind it. Public demos, private systems, and research are labeled with their current stage. Updated October 27, 2026.</p>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card project-feature reveal" id="project-scholarsafe">
-          <div class="project-no">01</div>
+<div class="work-controls" hidden><label for="project-search">Find a project</label><input id="project-search" type="search" placeholder="Search projects, tools, or ideas" autocomplete="off"><div class="project-filters" role="group" aria-label="Filter projects"><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="agents" aria-pressed="false">AI &amp; agents</button><button type="button" data-filter="products" aria-pressed="false">Products</button><button type="button" data-filter="systems" aria-pressed="false">Systems &amp; hardware</button><button type="button" data-filter="research" aria-pressed="false">Research</button></div><p id="project-count" role="status" aria-live="polite">13 projects</p></div><p class="project-empty" hidden>No projects match. Try another search or choose All work.</p><div class="project-grid">
+<article class="project-card project-feature reveal" id="project-skillforge" data-category="agents">
+      <div class="project-no">01</div><div class="project-tags"><span>LOCAL AI</span><span>VERIFIED SKILLS</span></div>
+      <h3>SkillForge</h3><p>An AI fix should earn the right to run again. SkillForge turns a verified, human-approved repair into a versioned skill that handles the next compatible incident without calling the model.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Builder · local AI runtime and demo</dd></div><div><dt>Built &amp; tested</dt><dd>On GB10, a model-authored skill passed 9/9 hidden checks; after host approval, a compatible incident reused it with zero model calls. Incompatible lookalikes were refused.</dd></div></dl>
+      <div class="stack">Python · Qwen · vLLM · GB10 · React · TypeScript</div><div class="project-links"><a href="./projects/skillforge.html">Case study →</a><a href="https://skillforge-ui-lab.vercel.app/#/demo" target="_blank" rel="noreferrer">Recorded demo ↗</a><a href="https://github.com/dude297/skillforge_main" target="_blank" rel="noreferrer">Public source ↗</a></div><div class="privacy-badge">WORKING PROTOTYPE · RECORDED PUBLIC DEMO</div></article>
+<article data-category="agents" class="project-card project-feature reveal" id="project-ohmni">
+          <div class="project-no">02</div>
+          <div class="project-icon mono">SCHEMATIC → MEASUREMENT</div>
+          <div class="project-tags"><span>CIRCUITS</span><span>APPLIED AI</span></div>
+          <h3>Ohmni</h3>
+          <p>A circuit drawing says 2.50 V; the meter reads 0.45 V. I built Ohmni to connect the schematic, the expected voltages, and the component faults worth checking next.</p>
+<dl class="project-evidence"><div><dt>My role</dt><dd>Developer · BuilderBase SF Tech Week hackathon</dd></div><div><dt>Built &amp; tested</dt><dd>Vision-to-graph extraction, human confirmation, a TypeScript circuit solver, and ranked fault hypotheses. The solver chooses the next useful voltage probe.</dd></div></dl>
+          <div class="stack">TypeScript · Next.js · Modified nodal analysis · Groq · Gemini</div>
+          <div class="project-links"><a href="./projects/ohmni.html">Case study →</a><a href="https://multimodal-hackathon-sage.vercel.app/lab" target="_blank" rel="noreferrer">Try the lab ↗</a><a href="https://github.com/dude297/ohmni" target="_blank" rel="noreferrer">Source ↗</a></div>
+          <div class="privacy-badge">WORKING PROTOTYPE · DEVELOPMENT CONTINUES</div>
+        </article>
+<article class="project-card project-feature reveal" id="project-daybridge" data-category="products">
+      <div class="project-no">03</div><div class="project-tags"><span>ACCESSIBILITY</span><span>COORDINATION</span></div>
+      <h3>DayBridge</h3><p>Finding an activity is only the first step. DayBridge checks time, travel, cost, and access so an older adult can turn a recommendation into a practical plan.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Developer · hackathon team project</dd></div><div><dt>Built &amp; tested</dt><dd>Deterministic activity matching, explained barriers, approval-scoped coordination, and simulated ride cancellation recovery. Public preview and local coordination demo have different capabilities.</dd></div></dl>
+      <div class="stack">Next.js · React · TypeScript · Zod · Vitest</div><div class="project-links"><a href="./projects/daybridge.html">Case study →</a><a href="https://daybridge-omega.vercel.app/" target="_blank" rel="noreferrer">Planner preview ↗</a><a href="https://github.com/dude297/c0mpiled-hackathon" target="_blank" rel="noreferrer">Public source ↗</a></div><div class="privacy-badge">HACKATHON PROTOTYPE · SIMULATED PROVIDERS</div></article>
+<article data-category="products" class="project-card project-feature reveal" id="project-scholarsafe">
+          <div class="project-no">04</div>
           <div class="project-icon">⌁</div>
           <div class="project-tags"><span>PRODUCT</span><span>FULL STACK</span></div>
           <h3>ScholarSafe</h3>
@@ -99,21 +119,8 @@
             <a href="https://scholarsafe-io2.vercel.app" target="_blank" rel="noreferrer">Visit product ↗</a>
           </div>
         </article>
-
-        <article class="project-card project-feature reveal" id="project-ohmni">
-          <div class="project-no">02</div>
-          <div class="project-icon mono">SCHEMATIC → MEASUREMENT</div>
-          <div class="project-tags"><span>CIRCUITS</span><span>APPLIED AI</span></div>
-          <h3>Ohmni</h3>
-          <p>A circuit drawing says 2.50 V; the meter reads 0.45 V. I built Ohmni to connect the schematic, the expected voltages, and the component faults worth checking next.</p>
-<dl class="project-evidence"><div><dt>My role</dt><dd>Developer · BuilderBase SF Tech Week hackathon</dd></div><div><dt>Built &amp; tested</dt><dd>Vision-to-graph extraction, human confirmation, a TypeScript circuit solver, and ranked fault hypotheses. The solver chooses the next useful voltage probe.</dd></div></dl>
-          <div class="stack">TypeScript · Next.js · Modified nodal analysis · Groq · Gemini</div>
-          <div class="project-links"><a href="./projects/ohmni.html">Case study →</a><a href="https://multimodal-hackathon-sage.vercel.app" target="_blank" rel="noreferrer">Try the lab ↗</a><a href="https://github.com/dude297/ohmni" target="_blank" rel="noreferrer">Source ↗</a></div>
-          <div class="privacy-badge">WORKING PROTOTYPE · DEVELOPMENT CONTINUES</div>
-        </article>
-
-        <article class="project-card reveal" id="project-converge">
-          <div class="project-no">03</div>
+<article data-category="agents" class="project-card reveal" id="project-converge">
+          <div class="project-no">05</div>
           <div class="project-icon mono">OUTCOME → REALITY</div>
           <div class="project-tags"><span>AI AGENTS</span><span>RELIABILITY</span></div>
           <h3>Converge</h3>
@@ -126,20 +133,22 @@
           </div>
           <div class="privacy-badge">HACKATHON PROTOTYPE · STRIPE TEST MODE</div>
         </article>
-
-        <article class="project-card reveal" id="project-homehub">
-          <div class="project-no">04</div>
+<article class="project-card  reveal" id="project-cyberdeck" data-category="systems">
+      <div class="project-no">06</div><div class="project-tags"><span>EMBEDDED LINUX</span><span>FPGA</span></div>
+      <h3>Cyberdeck</h3><p>A Raspberry Pi cyberdeck with a Rust interface, local control daemon, and a simulation-tested FPGA cooling controller.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Independent hardware and systems developer</dd></div><div><dt>Built &amp; tested</dt><dd>Rust/Slint UI physically validated on Pi Zero 2 W at 60 FPS; touch navigation, reboot, rollback, and a 30-minute soak passed in the repository validation record.</dd></div></dl>
+      <div class="stack">Rust · Slint · LinuxKMS · SystemVerilog · Raspberry Pi</div><div class="project-links"><a href="./projects/cyberdeck.html">Case study →</a></div><div class="privacy-badge">HARDWARE VALIDATED · FPGA IN SIMULATION</div></article>
+<article data-category="systems" class="project-card reveal" id="project-homehub">
+          <div class="project-no">07</div>
           <div class="project-icon">⌂</div>
           <div class="project-tags"><span>LOCAL-FIRST</span><span>INFRA</span></div>
           <h3>HomeHub</h3>
-          <p>I connected a Raspberry Pi edge node to an HP Envy compute node over Matrix and Tailscale. HomeHub keeps task state in SQLite and restricts which tools an AI request can run.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Independent systems developer</dd></div><div><dt>Built &amp; tested</dt><dd>Two Linux nodes, durable task state, sandboxed tools, systemd services, watchdogs, and 300+ automated tests.</dd></div></dl>
+          <p>I connected a Raspberry Pi edge node to an HP Envy compute node over Matrix and Tailscale. HomeHub keeps task state in SQLite and restricts which tools an AI request can run.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Independent systems developer</dd></div><div><dt>Built &amp; tested</dt><dd>Core 1.7.4 release foundations: session fencing, bounded leases, cancellation, explicit recovery, and immutable release validation. Production durable execution remains separately gated.</dd></div></dl>
           <div class="stack">Python · Linux · SQLite · Raspberry Pi · Tailscale</div>
           <div class="project-links"><a href="./projects/homehub.html">Case study →</a></div>
-          <div class="privacy-badge">PRIVATE / ACTIVE BUILD</div>
+          <div class="privacy-badge">PRIVATE SYSTEM · CORE 1.7.4</div>
         </article>
-
-        <article class="project-card reveal" id="project-colleagent">
-          <div class="project-no">05</div>
+<article data-category="agents" class="project-card reveal" id="project-colleagent">
+          <div class="project-no">08</div>
           <div class="project-icon mono">PRIVATE ↔ PUBLIC</div>
           <div class="project-tags"><span>AGENTS</span><span>PRIVACY</span></div>
           <h3>ColleAgent</h3>
@@ -149,58 +158,33 @@
           <div class="project-links"><a href="./projects/colleagent.html">Case study →</a></div>
           <div class="privacy-badge">PRE-PRODUCTION ALPHA / PILOT</div>
         </article>
-
-        <article class="project-card reveal" id="project-research">
-          <div class="project-no">06</div>
+<article data-category="research" class="project-card reveal" id="project-research">
+          <div class="project-no">09</div>
           <div class="project-icon">Δ</div>
           <div class="project-tags"><span>RESEARCH</span><span>VLA</span></div>
           <h3>After the Shield</h3>
-          <p>I’m studying how a robot’s next proposed action changes after a safety system corrects its previous action. The project is in simulator and model setup; the paired experiments have not produced results yet.</p>
+          <p>I’m studying how a robot’s next proposed action changes after a safety system corrects its previous action. SafeLIBERO rendering and checkpoint download are validated; model restore and the first live policy query remain unvalidated. There are no causal results yet.</p>
           <div class="stack">Python · Jupyter · SafeLIBERO · π₀.₅-LIBERO · Causal design</div>
           <div class="project-links"><a href="./projects/after-the-shield.html">Case study →</a></div>
           <div class="privacy-badge">RESEARCH / EXPERIMENT SETUP</div>
         </article>
-
-        <article class="project-card reveal">
-          <div class="project-no">07</div>
-          <div class="project-icon">◎</div>
-          <div class="project-tags"><span>TOOLS</span><span>DATA</span></div>
-          <h3>Internship Finder</h3>
-          <p>I built a personal tool to find internships and research opportunities, check eligibility, explain why a listing fits, and track applications. It uses verified job-board sources and scheduled updates.</p>
-          <div class="stack">React · TypeScript · FastAPI · Postgres · Playwright</div>
-          <div class="project-links">
-            <a href="https://github.com/dude297/internship-finder" target="_blank" rel="noreferrer">Source ↗</a>
-            <a href="https://internship-finder-pi.vercel.app" target="_blank" rel="noreferrer">Live ↗</a>
-          </div>
-        </article>
-
-        <article class="project-card visual-card reveal">
-          <div class="visual-media">
-            <img src="https://raw.githubusercontent.com/dude297/plasma-dynamic-wallpaper/main/docs/demo.gif" alt="Plasma Dynamic Wallpaper demo" loading="lazy" />
-          </div>
-          <div class="visual-card-copy">
-            <div class="project-no">08</div>
-            <div class="project-tags"><span>OPEN SOURCE</span><span>LINUX</span></div>
-            <h3>Plasma Dynamic Wallpaper</h3>
-            <p>I published a Python utility that brings Apple’s changing desktop wallpapers to KDE Plasma. It follows the original schedule or local solar time, supports multiple monitors, and includes background services and diagnostics.</p>
-            <div class="stack">Python · KDE Plasma · systemd · HEIC</div>
-            <div class="project-links">
-              <a href="https://github.com/dude297/plasma-dynamic-wallpaper" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a href="https://pypi.org/project/plasma-dynamic-wallpaper/" target="_blank" rel="noreferrer">PyPI ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-no">09</div>
-          <div class="project-icon">▧</div>
-          <div class="project-tags"><span>EMBEDDED</span><span>HARDWARE</span></div>
-          <h3>Cyberdeck</h3>
-          <p>I’m building a portable Linux computer around a Raspberry Pi Zero 2 W, touchscreen, and modular power supply. A future FPGA connection is planned; the current work focuses on the device and interface.</p>
-          <div class="stack">Raspberry Pi · Linux · Python · SPI · FPGA</div>
-          <div class="privacy-badge">PRIVATE / HARDWARE BUILD</div>
-        </article>
-      </div>
+<article class="project-card  reveal" id="project-internship-finder" data-category="products">
+      <div class="project-no">10</div><div class="project-tags"><span>SEARCH</span><span>EXPLAINABLE RANKING</span></div>
+      <h3>Internship Finder</h3><p>A private opportunity tracker that checks eligibility, ranks fit, and keeps evidence and application state together.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Independent full-stack developer</dd></div><div><dt>Built &amp; tested</dt><dd>Time-aware eligibility, deterministic fit explanations, source health, freshness checks, and review-before-accept résumé facts. Hosted as an owner-only application.</dd></div></dl>
+      <div class="stack">React · TypeScript · FastAPI · PostgreSQL · Playwright</div><div class="project-links"><a href="./projects/internship-finder.html">Case study →</a><a href="https://internship-finder-pi.vercel.app" target="_blank" rel="noreferrer">Owner sign-in ↗</a><a href="https://github.com/dude297/internship-finder" target="_blank" rel="noreferrer">Public source ↗</a></div><div class="privacy-badge">OWNER LOGIN REQUIRED · PUBLIC SOURCE</div></article>
+<article class="project-card  reveal" id="project-plasma-dynamic-wallpaper" data-category="systems">
+      <div class="project-no">11</div><div class="project-tags"><span>OPEN SOURCE</span><span>LINUX</span></div>
+      <h3>Plasma Dynamic Wallpaper</h3><p>Apple Dynamic Desktop schedules on KDE Plasma, packaged as a Python utility.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Open-source developer</dd></div><div><dt>Built &amp; tested</dt><dd>Published on PyPI with schedule and solar-time modes, multi-monitor support, background services, caching, and diagnostics.</dd></div></dl>
+      <div class="stack">Python · KDE Plasma · systemd · HEIC</div><div class="project-links"><a href="./projects/plasma-dynamic-wallpaper.html">Case study →</a><a href="https://github.com/dude297/plasma-dynamic-wallpaper" target="_blank" rel="noreferrer">Public source ↗</a></div><div class="privacy-badge">PUBLISHED PACKAGE · LINUX DESKTOP</div></article>
+<article class="project-card  reveal" id="project-slopebot" data-category="systems">
+      <div class="project-no">12</div><div class="project-tags"><span>VISION</span><span>FEEDBACK CONTROL</span></div>
+      <h3>Slopebot</h3><p>A browser-game control experiment that reads a Unity WebGL canvas, estimates a safe corridor, steers, and learns from recorded failures.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Independent experimental developer</dd></div><div><dt>Built &amp; tested</dt><dd>Canvas perception → obstacle and road geometry → PD-style steering → game-over detection and restart; telemetry and offline replay support repeatable evaluation.</dd></div></dl>
+      <div class="stack">Python · Playwright · Canvas perception · Feedback control</div><div class="project-links"><a href="./projects/slopebot.html">Case study →</a><a href="https://github.com/dude297/slopebot" target="_blank" rel="noreferrer">Public source ↗</a></div><div class="privacy-badge">EXPERIMENTAL · FIXED 960×540 LAYOUT</div></article>
+<article class="project-card  reveal" id="project-mathquest" data-category="systems">
+      <div class="project-no">13</div><div class="project-tags"><span>BROWSER AUTOMATION</span><span>INSPECTION</span></div>
+      <h3>Math Quest Inspector</h3><p>An inspection-first proof of concept for understanding a compiled HTML5 game and testing browser-scoped input.</p><dl class="project-evidence"><div><dt>My role</dt><dd>Independent experimental developer</dd></div><div><dt>Built &amp; tested</dt><dd>Records canvas/runtime signals and tests pointer and keyboard input on a synthetic canvas without controlling the desktop mouse.</dd></div></dl>
+      <div class="stack">Python · Playwright · Haxe/OpenFL inspection</div><div class="project-links"><a href="./projects/mathquest.html">Case study →</a><a href="https://github.com/dude297/mathquest-bot" target="_blank" rel="noreferrer">Public source ↗</a></div><div class="privacy-badge">PHASE 1 PROOF OF CONCEPT</div></article>
+</div>
     </section>
 
     <section class="section shell toolkit-section" id="toolkit">
@@ -212,8 +196,8 @@
         <article class="skill-card reveal">
           <div class="skill-head"><span class="skill-index">01 / LANGUAGES</span><span aria-hidden="true">⌘</span></div>
           <h3>Build the logic.</h3>
-          <p>Most of my application and systems code is in <strong>Python</strong> and <strong>TypeScript / JavaScript</strong>, with <strong>SQL</strong> for data and state. I also work with Java and C++ through coursework and experiments.</p>
-          <div class="skill-chips"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span><span>Java</span><span>C++</span></div>
+          <p>Most of my application and systems code is in <strong>Python</strong>, <strong>Rust</strong>, and <strong>TypeScript / JavaScript</strong>, with <strong>SQL</strong> for data and state. I also work with Java and C++ through coursework and experiments.</p>
+          <div class="skill-chips"><span>Python</span><span>Rust</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span><span>Java</span><span>C++</span></div>
           <div class="skill-proof"><span>USED IN</span><a href="#project-homehub">HomeHub ↗</a><a href="#project-colleagent">ColleAgent ↗</a></div>
         </article>
         <article class="skill-card reveal">
@@ -233,8 +217,8 @@
         <article class="skill-card reveal">
           <div class="skill-head"><span class="skill-index">04 / AGENTS + HARDWARE</span><span aria-hidden="true">⌁</span></div>
           <h3>Cross the boundary.</h3>
-          <p>I work with AI agents, model evaluation, local language models, <strong>Raspberry Pi</strong>, and circuit integration. I’m also exploring <strong>FPGA / Verilog</strong> through hardware experiments.</p>
-          <div class="skill-chips"><span>AI agents</span><span>Jupyter</span><span>Gemini</span><span>Raspberry Pi</span><span>Circuits</span><span>Verilog (exploring)</span></div>
+          <p>I work with AI agents, model evaluation, local language models, <strong>Raspberry Pi</strong>, and circuit integration. My Cyberdeck work includes a <strong>Rust / Slint</strong> interface and simulation-tested <strong>SystemVerilog</strong> cooling logic.</p>
+          <div class="skill-chips"><span>AI agents</span><span>Jupyter</span><span>Gemini</span><span>Raspberry Pi</span><span>Circuits</span><span>SystemVerilog</span><span>vLLM</span><span>Qwen</span></div>
           <div class="skill-proof"><span>USED IN</span><a href="#project-colleagent">ColleAgent ↗</a><a href="#project-research">VLA research ↗</a></div>
         </article>
       </div>

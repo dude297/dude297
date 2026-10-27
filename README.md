@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <b>I co-found housing software, build circuit-diagnosis tools, and connect Linux systems.</b><br/>
+  <b>I build verified AI workflows, student-housing software, circuit tools, and embedded Linux systems.</b><br/>
   <sub>AI agents · distributed systems · local infrastructure · embedded Linux · electronics</sub>
 </p>
 
@@ -22,6 +22,22 @@
 <p align="center"><img src="./profile/system-map.svg" width="100%" alt="Four connected engineering layers, from intelligence to physical systems"/></p>
 
 ## Selected builds
+
+### SkillForge · Verified local AI skills
+Turn a checked, human-approved repair into pinned code for compatible future incidents. GB10 evidence includes a model-authored skill passing 9/9 hidden cases, zero-model-call reuse, and refusal of incompatible lookalikes. Generation remains unreliable; the hosted demo is recorded.
+
+[Case study](https://weeche.com/projects/skillforge.html) · [Recorded demo](https://skillforge-ui-lab.vercel.app/#/demo) · [Source](https://github.com/dude297/skillforge_main)
+
+### DayBridge · Accessible activity planning
+Check practical barriers between a recommendation and an outing. Deterministic matching, explained constraints, and locally simulated approval / confirmation / cancellation recovery. The hosted planner preview has a smaller feature set than the local demo.
+
+[Case study](https://weeche.com/projects/daybridge.html) · [Planner preview](https://daybridge-omega.vercel.app/) · [Source](https://github.com/dude297/c0mpiled-hackathon)
+
+### Cyberdeck · Rust, embedded Linux & FPGA simulation
+Rust/Slint UI physically validated on a Pi Zero 2 W at 60 FPS, with read-only local IPC and recoverable boot profiles. The SystemVerilog cooling core is simulation-tested; real fan integration is pending.
+
+[Case study](https://weeche.com/projects/cyberdeck.html)
+
 
 ### ScholarSafe · Co-founder & Engineering Lead
 Build the student-housing and roommate-matching workflows: authentication, weighted matching, messaging, verification, moderation, and database access policies. Product checks include 400+ passing automated tests.
@@ -39,7 +55,7 @@ Persist the intended outcome, check Stripe and Supabase, and repair only the mis
 [Case study](https://weeche.com/projects/converge.html) · [Demo](https://scholarsafe.vercel.app)
 
 ### HomeHub · Distributed Linux & local AI
-Connect a Raspberry Pi edge node and HP Envy compute node over Matrix and Tailscale. SQLite state, sandboxed tools, watchdogs, systemd services, and 300+ automated tests.
+Connect a Raspberry Pi edge node and HP Envy compute node over Matrix and Tailscale. SQLite state, bounded tools, watchdogs and systemd services. Core 1.7.4 establishes recovery and release-validation foundations; durable production execution remains gated.
 
 [Case study](https://weeche.com/projects/homehub.html)
 
@@ -71,7 +87,7 @@ Public source and releases:
 | Release | What works | Explore |
 | :-- | :-- | :-- |
 | **[Plasma Dynamic Wallpaper](https://github.com/dude297/plasma-dynamic-wallpaper)** | Brings Apple Dynamic Desktop schedules and solar-time alignment to KDE Plasma; published on PyPI. | [Source](https://github.com/dude297/plasma-dynamic-wallpaper) · [PyPI](https://pypi.org/project/plasma-dynamic-wallpaper/) |
-| **[Internship Finder](https://github.com/dude297/internship-finder)** | Tracks verified opportunities, eligibility, scoring, and application state. | [Source](https://github.com/dude297/internship-finder) · [Demo](https://internship-finder-pi.vercel.app) |
+| **[Internship Finder](https://github.com/dude297/internship-finder)** | Tracks verified opportunities, eligibility, scoring, and application state. | [Source](https://github.com/dude297/internship-finder) · [Owner sign-in](https://internship-finder-pi.vercel.app) |
 
 <p align="center"><a href="https://github.com/dude297/plasma-dynamic-wallpaper"><img src="https://raw.githubusercontent.com/dude297/plasma-dynamic-wallpaper/main/docs/demo.gif" width="82%" alt="Plasma Dynamic Wallpaper running on KDE Plasma"/></a><br/><sub>Plasma Dynamic Wallpaper running on KDE Plasma.</sub></p>
 
@@ -98,3 +114,7 @@ Public source and releases:
 <p align="center">
   <sub><b>software ↔ systems ↔ hardware</b> · <a href="https://www.linkedin.com/in/yingche-wee">LinkedIn</a></sub>
 </p>
+
+## More experiments
+
+[Slopebot](https://weeche.com/projects/slopebot.html): canvas perception, feedback control, telemetry and replay. [Math Quest Inspector](https://weeche.com/projects/mathquest.html): browser runtime inspection and synthetic input checks. Both are experimental; their case studies state current limits.
