@@ -40,7 +40,7 @@ Rust/Slint UI physically validated on a Pi Zero 2 W at 60 FPS, with read-only lo
 
 
 ### ScholarSafe · Co-founder & Engineering Lead
-Build the student-housing and roommate-matching workflows: authentication, weighted matching, messaging, verification, moderation, and database access policies. Product checks include 400+ passing automated tests.
+Build the student-housing and roommate-matching workflows: authentication, weighted matching, messaging, verification, moderation, and database access policies. Product checks include 252 passing unit tests.
 
 [Case study](https://weeche.com/projects/scholarsafe.html) · [Product](https://scholarsafe-io2.vercel.app)
 
