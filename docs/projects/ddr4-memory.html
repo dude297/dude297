@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yingche Wee’s design-stage open-source project to reuse DDR4 SO-DIMMs, starting with an SPD reader and a single-module FPGA test.">
+  <title>Modular DDR4 Memory Expansion — Yingche Wee</title>
+  <link rel="canonical" href="https://weeche.com/projects/ddr4-memory.html">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-study.css">
+  <link rel="stylesheet" href="../case-workbench.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+<body class="case-body">
+  <header class="case-header">
+    <a href="../index.html#project-ddr4-memory">← Portfolio</a>
+    <a href="../resume.html#ddr4-memory">Résumé</a>
+  </header>
+  <main class="case-main" id="main">
+    <section class="case-hero" aria-labelledby="project-title">
+      <h1 id="project-title">Modular DDR4 Memory Expansion</h1>
+      <p class="case-deck">I have 15 mixed DDR4 laptop SO-DIMMs, each 8 GB, for about 120 GB of nominal capacity. I’m planning an open-source way to characterize and reuse them, starting with a single module.</p>
+      <div class="case-meta">
+        <div><small>Role</small><strong>Independent student project</strong></div>
+        <div><small>Status</small><strong>Design stage</strong></div>
+      </div>
+    </section>
+    <section class="case-section" aria-labelledby="plan-title">
+      <h2 id="plan-title">Development plan</h2>
+      <div class="case-copy">
+        <div class="flow">
+          <div class="flow-step"><div><b>Identify each module</b><span>Build a read-only I²C board to read Serial Presence Detect (SPD) data and record each module’s rank, device width, and timings.</span></div></div>
+          <div class="flow-step"><div><b>Validate one DDR4 interface</b><span>Train the FPGA’s DDR4 interface for one compatible SO-DIMM, then test reads and writes across its address range.</span></div></div>
+          <div class="flow-step"><div><b>Test a PCIe memory appliance</b><span>Use a Linux driver and DMA to give a test application access to FPGA-attached memory as a device buffer.</span></div></div>
+          <div class="flow-step"><div><b>Evaluate modular expansion</b><span>Test independent channels for compatibility, throughput, and power before adding slots.</span></div></div>
+        </div>
+        <p>CXL Type 3 is a separate, long-term research path that depends on compatible host and endpoint hardware and IP.</p>
+        <p>I plan to publish schematics, board files, firmware, original FPGA RTL, and reproducible test results as the work progresses.</p>
+      </div>
+    </section>
+    <section class="case-section" aria-labelledby="support-title">
+      <h2 id="support-title">Support the first prototypes</h2>
+      <div class="case-copy">
+        <p>I’m looking for 260-pin DDR4 SO-DIMM sockets, fabrication and assembly support for the SPD reader, and access to an FPGA kit with a documented DDR4 SO-DIMM interface. A few samples, a fabrication credit, or a referral to a lab or student program would help me get started.</p>
+        <div class="case-links"><a class="case-link primary" href="mailto:yingchewee@gmail.com?subject=DDR4%20memory%20project">Contact Yingche</a></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
