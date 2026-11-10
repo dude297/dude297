@@ -106,7 +106,7 @@ Public source and releases:
 
 **AI training:** Harvard Computer Society AI Bootcamp, remote, Winter 2024. Built CNNs, sentiment classifiers, and reinforcement-learning models.
 
-**Beyond code:** I co-founded and help lead engineering for ScholarSafe, founded an AI Club with 12+ peer workshops, and collaborate on educational AI evaluation with San José State University. <a href="https://weeche.com/resume.html">More in my résumé →</a>
+**Beyond code:** I co-founded and help lead engineering for ScholarSafe, founded an AI Club with 12+ peer workshops, and collaborated with San José State University on educational AI evaluation through March 2026. <a href="https://weeche.com/resume.html">More in my résumé →</a>
 
 
 <br/>
