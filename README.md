@@ -23,6 +23,11 @@
 
 ## Selected builds
 
+### Modular Memory Expansion Platform · Flagship hardware project
+Investigating whether spare DDR4 SO-DIMMs can become a useful host-accessible memory tier. Current evidence: routed Rev B.1 SPD-reader PCB candidate, 122 passing mock/reference-data software tests, and FPGA simulation work. Physical DDR4 validation is pending; PCIe DMA is the primary prototype target and CXL Type-3 is exploratory.
+
+[Case study](https://weeche.com/projects/ddr4-memory.html)
+
 ### SkillForge · Verified local AI skills
 Turn a checked, human-approved repair into pinned code for compatible future incidents. GB10 evidence includes a model-authored skill passing 9/9 hidden cases, zero-model-call reuse, and refusal of incompatible lookalikes. Generation remains unreliable; the hosted demo is recorded.
 
