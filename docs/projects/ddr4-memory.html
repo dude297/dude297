@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Yingche Wee’s design-stage open-source project to reuse DDR4 SO-DIMMs, starting with an SPD reader and a single-module FPGA test.">
-  <title>Modular DDR4 Memory Expansion — Yingche Wee</title>
+  <meta name="description" content="Student-led DDR4 memory architecture project: custom SPD-reader PCB, FPGA simulation, and a planned PCIe memory appliance.">
+  <title>Modular Memory Expansion Platform — Yingche Wee</title>
   <link rel="canonical" href="https://weeche.com/projects/ddr4-memory.html">
   <link rel="icon" href="../favicon.svg">
   <link rel="stylesheet" href="../styles.css">
@@ -19,33 +19,48 @@
   </header>
   <main class="case-main" id="main">
     <section class="case-hero" aria-labelledby="project-title">
-      <h1 id="project-title">Modular DDR4 Memory Expansion</h1>
-      <p class="case-deck">I have 15 mixed DDR4 laptop SO-DIMMs, each 8 GB, for about 120 GB of nominal capacity. I’m planning an open-source way to characterize and reuse them, starting with a single module.</p>
+      <div class="case-index">FLAGSHIP HARDWARE PROJECT / IN DEVELOPMENT</div>
+      <h1 id="project-title">Modular Memory Expansion Platform</h1>
+      <p class="case-deck">What if unused laptop memory could become an affordable, host-accessible memory tier? I’m developing a staged DDR4 and FPGA platform to investigate that question, starting with module characterization and working toward PCIe-connected device memory.</p>
       <div class="case-meta">
-        <div><small>Role</small><strong>Independent student project</strong></div>
-        <div><small>Status</small><strong>Design stage</strong></div>
+        <div><small>Role</small><strong>Independent student engineer</strong></div>
+        <div><small>Status</small><strong>PCB design / simulation</strong></div>
+        <div><small>Stack</small><strong>DDR4 · Altium · Python · FPGA</strong></div>
+        <div><small>Target</small><strong>PCIe / Linux DMA</strong></div>
       </div>
     </section>
-    <section class="case-section" aria-labelledby="plan-title">
-      <h2 id="plan-title">Development plan</h2>
-      <div class="case-copy">
-        <div class="flow">
-          <div class="flow-step"><div><b>Identify each module</b><span>Build a read-only I²C board to read Serial Presence Detect (SPD) data and record each module’s rank, device width, and timings.</span></div></div>
-          <div class="flow-step"><div><b>Validate one DDR4 interface</b><span>Train the FPGA’s DDR4 interface for one compatible SO-DIMM, then test reads and writes across its address range.</span></div></div>
-          <div class="flow-step"><div><b>Test a PCIe memory appliance</b><span>Use a Linux driver and DMA to give a test application access to FPGA-attached memory as a device buffer.</span></div></div>
-          <div class="flow-step"><div><b>Evaluate modular expansion</b><span>Test independent channels for compatibility, throughput, and power before adding slots.</span></div></div>
-        </div>
-        <p>CXL Type 3 is a separate, long-term research path that depends on compatible host and endpoint hardware and IP.</p>
-        <p>I plan to publish schematics, board files, firmware, original FPGA RTL, and reproducible test results as the work progresses.</p>
+    <section class="case-section"><h2>01 / ENGINEERING EVIDENCE</h2><div class="case-copy">
+      <h3>From module identity to a testable memory interface.</h3>
+      <p>Development starts with a USB-C, read-only Serial Presence Detect (SPD) reader. SPD describes a module’s identity, organization and timings; it does not expose the DRAM array itself.</p>
+      <div class="case-grid">
+        <div class="case-block"><small>PCB / REV B.1</small><h4>84 × 58 mm</h4><p>Routed two-layer design candidate, with zero reported DRC violations. External design-for-manufacture review is pending; not approved for fabrication.</p></div>
+        <div class="case-block"><small>SOFTWARE / NOV 25, 2026</small><h4>122 passing tests</h4><p>Mock transport, synthetic SPD data and a published reference image. Not physical validation of the custom reader.</p></div>
+        <div class="case-block"><small>FPGA / SIMULATION</small><h4>Memory-test RTL</h4><p>Behavioral memory tests, corruption detection and a LiteDRAM simulation checkpoint. Real DDR4 training and read/write validation remain pending.</p></div>
+        <div class="case-block"><small>READ-ONLY CHECK</small><h4>Real SPD data</h4><p>Read and checked SPD data from an installed laptop memory module using the existing host, not the custom board.</p></div>
       </div>
-    </section>
-    <section class="case-section" aria-labelledby="support-title">
-      <h2 id="support-title">Support the first prototypes</h2>
-      <div class="case-copy">
-        <p>I’m looking for 260-pin DDR4 SO-DIMM sockets, fabrication and assembly support for the SPD reader, and access to an FPGA kit with a documented DDR4 SO-DIMM interface. A few samples, a fabrication credit, or a referral to a lab or student program would help me get started.</p>
-        <div class="case-links"><a class="case-link primary" href="mailto:yingchewee@gmail.com?subject=DDR4%20memory%20project">Contact Yingche</a></div>
+      <p>No custom PCB has been fabricated or powered. The project has not yet demonstrated physical FPGA-attached DDR4 or a PCIe memory device.</p>
+    </div></section>
+    <section class="case-section"><h2>02 / TARGET ARCHITECTURE</h2><div class="case-copy">
+      <h3>Keep the memory controller close to the memory.</h3>
+      <div class="arch"><div class="arch-row"><div class="arch-node"><b>Linux host</b><span>Driver / application API</span></div><div class="arch-arrow" aria-hidden="true">↔</div><div class="arch-node"><b>FPGA endpoint</b><span>PCIe DMA / DDR4 controller + PHY</span></div><div class="arch-arrow" aria-hidden="true">↔</div><div class="arch-node"><b>DDR4 SO-DIMM</b><span>One validated module first</span></div></div></div>
+      <p>This is a proposed architecture. Ordinary PCIe device memory is not transparent CPU system RAM. A host driver and application must explicitly manage access; potential uses include application-managed buffers and an experimental memory tier for memory-constrained workloads.</p>
+    </div></section>
+    <section class="case-section" aria-labelledby="plan-title"><h2 id="plan-title">03 / DEVELOPMENT ROADMAP</h2><div class="case-copy">
+      <div class="flow">
+        <div class="flow-step"><div><b>01 · Characterize DDR4 modules</b><span>In development — review and fabricate the read-only SPD board, then validate capacity, rank, device width, timings and CRC across modules.</span></div></div>
+        <div class="flow-step"><div><b>02 · Validate one physical DDR4 interface</b><span>Simulation underway — select a documented DDR4-capable FPGA platform, establish PHY training, then demonstrate reliable reads and writes.</span></div></div>
+        <div class="flow-step"><div><b>03 · Demonstrate PCIe device memory</b><span>Planned — implement host DMA and benchmark data integrity, throughput and latency on Linux.</span></div></div>
+        <div class="flow-step"><div><b>04 · Evaluate modular expansion</b><span>Planned — assess independently controlled modules, compatibility, throughput and power before adding more channels.</span></div></div>
+        <div class="flow-step"><div><b>05 · Investigate CXL Type-3 memory</b><span>Exploratory — study coherent memory expansion and tiering using compatible host and endpoint hardware and IP. Not a promised hardware deliverable.</span></div></div>
       </div>
-    </section>
+      <p>I intend to publish reviewed design files and reproducible results once publication and licensing decisions are complete.</p>
+    </div></section>
+    <section class="case-section" aria-labelledby="support-title"><h2 id="support-title">04 / HARDWARE COLLABORATION</h2><div class="case-copy">
+      <h3>Help turn the design into measured hardware.</h3>
+      <p>I welcome DDR4 SO-DIMM samples with diverse capacities, ranks and device organizations; 260-pin sockets; PCB fabrication or assembly credits; access to a documented DDR4-capable FPGA development kit; and technical feedback. Older and surplus hardware can be particularly useful.</p>
+      <p>Support would help validate the next engineering milestone. I can share documented findings and acknowledge contributors without promising a particular result or positive review.</p>
+      <div class="case-links"><a class="case-link primary" href="mailto:yingchewee@gmail.com?subject=DDR4%20memory%20project">Contact Yingche</a><a class="case-link" href="https://github.com/dude297" target="_blank" rel="noreferrer">GitHub profile ↗</a></div>
+    </div></section>
   </main>
 </body>
 </html>
