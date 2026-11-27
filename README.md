@@ -23,7 +23,7 @@
 
 ## Selected builds
 
-### Modular Memory Expansion Platform · Flagship hardware project
+### DDR4 SO-DIMM Reader & FPGA Lab · Current hardware project
 Investigating whether spare DDR4 SO-DIMMs can become a useful host-accessible memory tier. Current evidence: routed Rev B.1 SPD-reader PCB candidate, 122 passing mock/reference-data software tests, and FPGA simulation work. Physical DDR4 validation is pending; PCIe DMA is the primary prototype target and CXL Type-3 is exploratory.
 
 [Case study](https://weeche.com/projects/ddr4-memory.html)
